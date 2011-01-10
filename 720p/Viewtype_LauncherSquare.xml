@@ -1,0 +1,67 @@
+﻿<includes>
+    <include name="Viewtype_LauncherSquare">
+        <control type="group">
+            <visible>Control.IsVisible(516)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>450</posx>
+            <posy>0</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>880</width>
+                <height>720</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="panel" id="516">
+                <visible>Window.IsActive(1) | Container.Content(Movies)</visible>
+                <posx>73</posx>
+                <posy>100</posy>
+                <width>748</width>
+                <height>560</height>
+                <onleft>9000</onleft>
+                <onright>516</onright>
+                <onup>516</onup>
+                <ondown>516</ondown>
+                <scrolltime>0</scrolltime>
+                <viewtype label="LauncherSquare">list</viewtype>
+                <orientation>vertical</orientation>
+                <itemlayout height="140" width="140">
+                    <control type="image">
+                        <posx>4</posx>
+                        <posy>3</posy>
+                        <width>116</width>
+                        <height>116</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="square_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <colordiffuse>88ffffff</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="140" width="140">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture diffuse="square_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>square_frame.png</texture>
+                        <colordiffuse>ff00b8f5</colordiffuse>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <include>Launcher_Left_bar</include>
+    </include>
+</includes>

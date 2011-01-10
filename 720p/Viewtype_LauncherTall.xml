@@ -1,0 +1,67 @@
+<includes>
+    <include name="Viewtype_LauncherTall">
+        <control type="group">
+            <visible>Control.IsVisible(518)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>450</posx>
+            <posy>0</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>880</width>
+                <height>720</height>
+                <aspectratio>stretch</aspectratio>
+                <aligny>center</aligny>
+                <texture>special://skin/media/white.png</texture>
+                <colordiffuse>55000000</colordiffuse>
+            </control>
+            <control type="panel" id="518">
+                <visible>Window.IsActive(1) | Container.Content(Movies)</visible>
+                <posx>67</posx>
+                <posy>100</posy>
+                <width>748</width>
+                <height>594</height>
+                <onleft>9000</onleft>
+                <onright>518</onright>
+                <onup>518</onup>
+                <ondown>518</ondown>
+                <scrolltime>0</scrolltime>
+                <viewtype label="LauncherTall">list</viewtype>
+                <orientation>vertical</orientation>
+                <itemlayout height="198" width="144">
+                    <control type="image">
+                        <posx>4</posx>
+                        <posy>3</posy>
+                        <width>116</width>
+                        <height>172</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture diffuse="poster_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <colordiffuse>88ffffff</colordiffuse>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="198" width="144">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>124</width>
+                        <height>178</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture diffuse="poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>124</width>
+                        <height>178</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>poster_frame.png</texture>
+                        <colordiffuse>ff00b8f5</colordiffuse>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <include>Launcher_Left_bar</include>
+    </include>
+</includes>

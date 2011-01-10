@@ -1,0 +1,99 @@
+﻿<includes>
+    <include name="Viewtype_LauncherLogo">
+        <control type="group">
+            <visible>Control.IsVisible(519)</visible>
+            <include>VisibleFadeEffect</include>
+            <posx>0</posx>
+            <posy>200</posy>
+            <control type="fixedlist" id="519">
+                <visible>Window.IsActive(1)</visible>
+                <posx>-57</posx>
+                <posy>50</posy>
+                <width>1350</width>
+                <height>300</height>
+                <onleft>519</onleft>
+                <onright>519</onright>
+                <onup>9000</onup>
+                <ondown>63</ondown>
+                <viewtype label="LauncherLogo">biglist</viewtype>
+                <pagecontrol>63</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <focusposition>2</focusposition>
+                <orientation>horizontal</orientation>
+                <preloaditems>4</preloaditems>
+                <itemlayout width="290">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>230</width>
+                        <height>230</height>
+                        <aspectratio>keep</aspectratio>
+                        <colordiffuse>88ffffff</colordiffuse>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="290">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>230</width>
+                        <height>230</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="70" end="120" time="400">focus</animation>
+                    </control>
+                </focusedlayout>
+            </control>
+            <control type="scrollbar" id="63">
+                <posx>140</posx>
+                <posy>270</posy>
+                <width>1000</width>
+                <height>52</height>
+                <texturesliderbackground>scrollbar_horizontal_background.png</texturesliderbackground>
+                <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
+                <onup>519</onup>
+                <ondown>9000</ondown>
+                <showonepage>true</showonepage>
+                <orientation>horizontal</orientation>
+                <visible allowhiddenfocus="true">Control.IsVisible(519) + Control.HasFocus(63)</visible>
+            </control>
+            <control type="group">
+                <posx>0</posx>
+                <posy>330</posy>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>0</posy>
+                    <width>1260</width>
+                    <height>30</height>
+                    <font>Font_Condensed_Bold_40</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="textbox">
+                    <posx>140</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <height>94</height>
+                    <font>Font_Tahoma_20</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Premiered,, $LOCALIZE[31371]]</label>
+                    <visible>!IsEmpty(ListItem.Premiered)</visible>
+                </control>
+                <control type="textbox">
+                    <posx>140</posx>
+                    <posy>50</posy>
+                    <width>1000</width>
+                    <height>100</height>
+                    <font>Font_Tahoma_20</font>
+                    <textcolor>white</textcolor>
+                    <align>justify</align>
+                    <label>$INFO[ListItem.Plot]</label>
+                    <autoscroll time="5000" delay="10000" repeat="5160">true</autoscroll>
+                    <visible>IsEmpty(ListItem.Premiered)</visible>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

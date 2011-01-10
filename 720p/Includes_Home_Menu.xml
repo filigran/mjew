@@ -1,0 +1,875 @@
+﻿<includes>
+    <include name="Home_Onup_Ondown">
+        <control type="group" id="900">
+            <description>Buttons for recently added and weather info visibility (onup conditions)</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>RecentlyAdded movies</description>
+                <visible>Container(300).HasFocus(5) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+                <onfocus>SetFocus(301)</onfocus>
+            </control>
+            <control type="button">
+                <description>RecentlyAdded Episodes</description>
+                <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_RecentlyAdded_Episodes)</visible>
+                <onfocus>SetFocus(302)</onfocus>
+            </control>
+            <control type="button">
+                <description>RecentlyAdded music</description>
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+                <onfocus>SetFocus(303)</onfocus>
+            </control>
+            <control type="button">
+                <description>Weather info</description>
+                <visible>Container(300).HasFocus(8) + Skin.HasSetting(Home_Show_WeatherInfo)</visible>
+                <onfocus>SetFocus(304)</onfocus>
+            </control>
+        </control>
+        <control type="group" id="901">
+            <description>Buttons for random items visibility (ondown conditions)</description>
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Videos submenu</description>
+                <visible>Container(300).HasFocus(2)</visible>
+                <onfocus>SetFocus(312)</onfocus>
+            </control>
+            <control type="button">
+                <description>Music submenu</description>
+                <visible>Container(300).HasFocus(3)</visible>
+                <onfocus>SetFocus(311)</onfocus>
+            </control>
+            <control type="button">
+                <description>TV Shows submenu</description>
+                <visible>Container(300).HasFocus(4)</visible>
+                <onfocus>SetFocus(308)</onfocus>
+            </control>
+            <control type="button">
+                <description>Movies submenu</description>
+                <visible>Container(300).HasFocus(5)</visible>
+                <onfocus>SetFocus(309)</onfocus>
+            </control>
+            <control type="button">
+                <description>Pictures submenu</description>
+                <visible>Container(300).HasFocus(7)</visible>
+                <onfocus>SetFocus(313)</onfocus>
+            </control>
+            <control type="button">
+                <description>Weather submenu</description>
+                <visible>Container(300).HasFocus(8)</visible>
+                <onfocus>SetFocus(310)</onfocus>
+            </control>
+            <control type="button">
+                <description>Apps submenu</description>
+                <visible>Container(300).HasFocus(9)</visible>
+                <onfocus>SetFocus(314)</onfocus>
+            </control>
+            <control type="button">
+                <description>Settings submenu</description>
+                <visible>Container(300).HasFocus(12)</visible>
+                <onfocus>SetFocus(315)</onfocus>
+            </control>
+            <control type="button">
+                <description>Shutdown submenu</description>
+                <visible>Container(300).HasFocus(13)</visible>
+                <onfocus>SetFocus(316)</onfocus>
+            </control>
+        </control>
+    </include>
+    <include name="Home_Labels_Right_Icons">
+        <posx>-930</posx>
+        <width>2220</width>
+        <itemlayout width="630" height="100">
+            <control type="label">
+                <posx>250</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="700" height="100">
+            <control type="label">
+                <posx>310</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="Control.HasFocus(313) | Control.HasFocus(314)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-80" tween="back" easing="out" time="400" condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+                <animation effect="fade" start="100" end="40" reversible="false" time="200"condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(313) | Control.HasFocus(314) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Labels_Left_Icons">
+        <posx>-420</posx>
+        <width>1750</width>
+        <itemlayout width="430" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="850" height="100">
+            <control type="label">
+                <posx>200</posx>
+                <posy>0</posy>
+                <width>400</width>
+                <height>100</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="Control.HasFocus(313) | Control.HasFocus(314)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-80" tween="back" easing="out" time="400" condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+                <animation effect="fade" start="100" end="40" reversible="false" time="200"condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(313) | Control.HasFocus(314) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Labels_Centered_Icons">
+        <posx>-400</posx>
+        <width>1750</width>
+        <itemlayout width="520" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>22ffffff</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout width="510" height="100">
+            <control type="label">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>430</width>
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <font>Font_Condensed_Bold_Caps_60</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="Control.HasFocus(313) | Control.HasFocus(314)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-80" tween="back" easing="out" time="400" condition="[Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(310) | Control.HasFocus(315) | Control.HasFocus(312)]">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-80" tween="back" easing="out" time="400" condition="[Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(316)]">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-100" tween="back" easing="out" time="400" condition="[Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(311)]">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-70" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(310) | Control.HasFocus(315) | Control.HasFocus(312)]">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-110" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(316)]">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-170" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(311)]">conditional</animation>
+                <animation effect="fade" start="100" end="40" reversible="false" time="200"condition="Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(310) | Control.HasFocus(311) | Control.HasFocus(312) | Control.HasFocus(313) | Control.HasFocus(314) | Control.HasFocus(315) | Control.HasFocus(316)">conditional</animation>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Bottom_posy133r">
+        <posy>133r</posy>
+    </include>
+    <include name="Home_Bottom_posy100r">
+        <posy>100r</posy>
+    </include>
+    <include name="Home_Centered_posy310">
+        <posy>310</posy>
+    </include>
+    <include name="Home_Centered_posy460">
+        <posy>460</posy>
+    </include>
+    <include name="Home_Backgrounds">
+        <!--<control type="image">
+            <description>Menu background</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>100</height>
+            <texture>white.png</texture>
+            <colordiffuse>88000000</colordiffuse>
+        </control>
+        <control type="image">
+            <description>Top border</description>
+            <posx>0</posx>
+            <posy>-3</posy>
+            <width>1280</width>
+            <height>3</height>
+            <texture>white.png</texture>
+            <colordiffuse>5500b8f5</colordiffuse>
+        </control>
+        <control type="image">
+            <description>Bottom border</description>
+            <posx>0</posx>
+            <posy>100</posy>
+            <width>1280</width>
+            <height>3</height>
+            <texture>white.png</texture>
+            <colordiffuse>55008bf5</colordiffuse>
+            <visible>!Skin.HasSetting(Home_Bottom_Menu)</visible>
+        </control>-->
+    </include>
+    <include name="Home_Content">
+        <content>
+            <item id="1">
+                <description>Play Disc</description>
+                <label>341</label>
+                <icon>special://skin/media/homeicons/playdisc.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/playdisc.jpg">$INFO[Skin.String(home_custom_back_playdisc_folder)]</thumb>
+                <onclick>PlayDVD</onclick>
+                <visible>System.HasMediadvd</visible>
+            </item>
+            <item id="2">
+                <description>Videos</description>
+                <label>3</label>
+                <icon>special://skin/media/homeicons/videos.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/videos.jpg">$INFO[Skin.String(home_custom_back_video_folder)]</thumb>
+                <onclick>ActivateWindow(VideoFiles)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Videos)</visible>
+            </item>
+            <item id="3">
+                <description>Music</description>
+                <label>2</label>
+                <icon>special://skin/media/homeicons/music.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/music.jpg">$INFO[Skin.String(home_custom_back_music_folder)]</thumb>
+                <onclick>ActivateWindow(Music,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
+            </item>
+            <item id="6">
+                <description>Trailers</description>
+                <label>31357</label>
+                <icon>special://skin/media/homeicons/trailers.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/trailers.jpg">$INFO[Skin.String(home_custom_back_trailers_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,plugin://plugin.video.apple.movie.trailers.lite,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Trailers) + System.HasAddon(plugin.video.apple.movie.trailers.lite)</visible>
+            </item>
+            <item id="7">
+                <description>Pictures</description>
+                <label>1</label>
+                <icon>special://skin/media/homeicons/pictures.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/pictures.jpg">$INFO[Skin.String(home_custom_back_pictures_folder)]</thumb>
+                <onclick>ActivateWindow(Pictures,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
+            </item>
+            <item id="8">
+                <description>Weather</description>
+                <label>8</label>
+                <icon fallback="special://skin/media/homeicons/weather.png">$INFO[Window(Weather).Property(Current.ConditionIcon)]</icon>
+                <thumb fallback="special://skin/media/backgrounds/weather.jpg">$INFO[Skin.String(home_custom_back_weather_folder)]</thumb>
+                <onclick>ActivateWindow(weather,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Weather)</visible>
+            </item>
+            <item id="4">
+                <description>TV Shows</description>
+                <label>20343</label>
+                <icon>special://skin/media/homeicons/tvshows.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
+            </item>
+            <item id="5">
+                <description>Movies</description>
+                <label>342</label>
+                <icon>special://skin/media/homeicons/movies.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
+                <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
+            </item>
+            <item id="9">
+                <description>Apps</description>
+                <label>31418</label>
+                <icon>special://skin/media/homeicons/apps.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/apps.jpg">$INFO[Skin.String(home_custom_back_apps_folder)]</thumb>
+                <onclick>ActivateWindow(Programs,Addons,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Apps)</visible>
+            </item>
+            <item id="10">
+                <description>Launcher</description>
+                <label>31358</label>
+                <icon>special://skin/media/homeicons/games.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/games.jpg">$INFO[Skin.String(home_custom_back_games_folder)]</thumb>
+                <onclick>ActivateWindow(10001,plugin://plugin.program.launcher,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Games)</visible>
+            </item>
+            <item id="11">
+                <description>Profiles</description>
+                <label>13200</label>
+                <icon>special://skin/media/homeicons/profiles.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/profiles.jpg">$INFO[Skin.String(home_custom_back_profiles_folder)]</thumb>
+                <onclick>ActivateWindow(Profiles,return)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Profiles)</visible>
+            </item>
+            <item id="12">
+                <description>Settings</description>
+                <label>5</label>
+                <icon>special://skin/media/homeicons/settings.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/settings.jpg">$INFO[Skin.String(home_custom_back_settings_folder)]</thumb>
+                <onclick>ActivateWindow(Settings)</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Settings)</visible>
+            </item>
+            <item id="13">
+                <description>Shutdown</description>
+                <label>13005</label>
+                <icon>special://skin/media/homeicons/shutdown.png</icon>
+                <thumb fallback="special://skin/media/backgrounds/shutdown.jpg">$INFO[Skin.String(home_custom_back_shutdown_folder)]</thumb>
+                <onclick>Shutdown()</onclick>
+                <visible>!Skin.HasSetting(Home_Hide_Shutdown)</visible>
+            </item>
+        </content>
+    </include>
+    <include name="Home_Icons">
+        <control type="image">
+            <description>Menu icon centered</description>
+            <posx>512</posx>
+            <posy>-266</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="Control.HasFocus(313) | Control.HasFocus(314)">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-80" tween="back" easing="out" time="400" condition="[Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(310) | Control.HasFocus(312) | Control.HasFocus(315) | Control.HasFocus(316)]">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-100" tween="back" easing="out" time="400" condition="[Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(311)]">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-70" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(310) | Control.HasFocus(315) | Control.HasFocus(312)]">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-110" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(316)]">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-170" tween="back" easing="out" time="400" condition="[!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)] + [Control.HasFocus(308) | Control.HasFocus(309) | Control.HasFocus(311)]">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + !Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons) + !Control.HasFocus(310)</visible>
+        </control>
+        <control type="image">
+            <description>Weather submenu icons centered</description>
+            <posx>512</posx>
+            <posy>-266</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(310).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-70" tween="back" easing="out" time="400" condition="Control.HasFocus(310)">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + !Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons) + Control.HasFocus(310)</visible>
+        </control>
+        <control type="image">
+            <description>Menu icon to the right unless weather submenu active</description>
+            <posx>702</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Right_Icons) + !Control.HasFocus(310)</visible>
+        </control>
+        <control type="image">
+            <description>Weather submenu icons to the right</description>
+            <posx>702</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(310).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Right_Icons) + Control.HasFocus(310)</visible>
+        </control>
+        <control type="image">
+            <description>Menu icon to the left unless weather sub is active</description>
+            <posx>352</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(300).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Left_Icons) + !Control.HasFocus(310)</visible>
+        </control>
+        <control type="image">
+            <description>Weather submenu icons to the left</description>
+            <posx>352</posx>
+            <posy>-78</posy>
+            <width>256</width>
+            <height>256</height>
+            <texture>$INFO[Container(310).ListItem.ActualIcon]</texture>
+            <!-- FRÅGA: Hur göra för att inte bilden ska synas precis i början, rätt typ av animation alltså. -->
+            <animation effect="zoom" center="auto" tween="back" easing="out" time="400" start="50" end="100" reversible="false" condition="!Container(300).OnNext + !Container(300).OnPrevious">conditional</animation>
+            <visible>!Skin.HasSetting(Home_Hide_Icons) + Skin.HasSetting(Home_Left_Icons) + Control.HasFocus(310)</visible>
+        </control>
+    </include>
+    <include name="SubMenu_Common">
+        <posx>135</posx>
+        <posy>10</posy>
+        <width>1000</width>
+        <height>160</height>
+        <onleft>300</onleft>
+        <onright>300</onright>
+        <viewtype>list</viewtype>
+        <orientation>vertical</orientation>
+        <focusposition>1</focusposition>
+        <itemgap>0</itemgap>
+        <itemlayout height="20" width="500">
+            <control type="label">
+                <posx>500</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>aaffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>right</align>
+                <info>ListItem.Label</info>
+                <visible>Skin.HasSetting(Home_Right_Icons)</visible>
+            </control>
+            <control type="label">
+                <posx>510</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>aaffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>left</align>
+                <info>ListItem.Label</info>
+                <visible>Skin.HasSetting(Home_Left_Icons)</visible>
+            </control>
+            <control type="label">
+                <posx>505</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>aaffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>center</align>
+                <info>ListItem.Label</info>
+                <visible>[!Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_icons)] | Skin.HasSetting(Home_Hide_Icons)</visible>
+            </control>
+        </itemlayout>
+        <focusedlayout height="20" width="500">
+            <control type="label">
+                <posx>500</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>right</align>
+                <info>ListItem.Label</info>
+                <visible>Skin.HasSetting(Home_Right_Icons) + [!Control.HasFocus(310) | [Control.HasFocus(310) + Container(310).HasFocus(4)]]</visible>
+            </control>
+            <control type="label">
+                <posx>510</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>left</align>
+                <info>ListItem.Label</info>
+                <visible>Skin.HasSetting(Home_Left_Icons) + [!Control.HasFocus(310) | [Control.HasFocus(310) + Container(310).HasFocus(4)]]</visible>
+            </control>
+            <control type="label">
+                <posx>505</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <align>center</align>
+                <info>ListItem.Label</info>
+                <visible>[[!Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_icons)] | Skin.HasSetting(Home_Hide_Icons)] + [!Control.HasFocus(310) | [Control.HasFocus(310) + Container(310).HasFocus(4)]]</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>0</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <focusedcolor>white</focusedcolor>
+                <scrollout>false</scrollout>
+                <pauseatend>2000</pauseatend>
+                <scrollspeed>38</scrollspeed>
+                <scroll>true</scroll>
+                <align>right</align>
+                <info>Container(310).ListItem.Label</info>
+                <info>Container(310).ListItem.Label2</info>
+                <visible>Skin.HasSetting(Home_Right_Icons) + Control.HasFocus(310) + !Container(310).HasFocus(4)</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>510</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <focusedcolor>white</focusedcolor>
+                <scrollout>false</scrollout>
+                <pauseatend>2000</pauseatend>
+                <scrollspeed>38</scrollspeed>
+                <scroll>true</scroll>
+                <align>left</align>
+                <info>Container(310).ListItem.Label</info>
+                <info>Container(310).ListItem.Label2</info>
+                <visible>Skin.HasSetting(Home_Left_icons) + Control.HasFocus(310) + !Container(310).HasFocus(4)</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>255</posx>
+                <posy>0</posy>
+                <font>Font_Normal_Caps_18</font>
+                <textcolor>ff00b8f5</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <width>500</width>
+                <focusedcolor>white</focusedcolor>
+                <scrollout>false</scrollout>
+                <pauseatend>2000</pauseatend>
+                <scrollspeed>38</scrollspeed>
+                <scroll>true</scroll>
+                <align>center</align>
+                <info>Container(310).ListItem.Label</info>
+                <info>Container(310).ListItem.Label2</info>
+                <visible>[[!Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons)] | Skin.HasSetting(Home_Hide_Icons)] + Control.HasFocus(310) + !Container(310).HasFocus(4)</visible>
+            </control>
+        </focusedlayout>
+    </include>
+    <include name="Home_Menu">
+        <control type="group">
+            <posx>0</posx>
+            <include>Home_Onup_Ondown</include>
+            <include condition="Skin.HasSetting(Home_Semi_Centered_Menu)">Home_Centered_posy460</include>
+            <include condition="Skin.HasSetting(Home_Centered_Menu)">Home_Centered_posy310</include>
+            <include condition="!Skin.HasSetting(Home_Semi_Centered_Menu) + !Skin.HasSetting(Home_Centered_Menu) + System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy133r</include>
+            <include condition="!Skin.HasSetting(Home_Semi_Centered_Menu) + !Skin.HasSetting(Home_Centered_Menu) + !System.GetBool(lookandfeel.enablerssfeeds)">Home_Bottom_posy100r</include>
+            <animation effect="slide" start="0,800" end="0,0" tween="back" easing="out" time="400">WindowOpen</animation>
+            <animation effect="slide" start="0,0" end="0,800" tween="back" easing="out" time="400">WindowClose</animation>
+            <include>Home_Backgrounds</include>
+            <control type="fixedlist" id="300">
+                <posy>0</posy>
+                <height>100</height>
+                <onleft>300</onleft>
+                <onright>300</onright>
+                <onup>900</onup>
+                <ondown>901</ondown>
+                <viewtype>list</viewtype>
+                <orientation>horizontal</orientation>
+                <focusposition>2</focusposition>
+                <scrolltime>200</scrolltime>
+                <include condition="Skin.HasSetting(Home_Left_Icons)">Home_Labels_Left_Icons</include>
+                <include condition="Skin.HasSetting(Home_Right_Icons)">Home_Labels_Right_Icons</include>
+                <include condition="!Skin.HasSetting(Home_Left_Icons) + !Skin.HasSetting(Home_Right_Icons)">Home_Labels_Centered_Icons</include>
+                <include>Home_Content</include>
+            </control>
+            <include>Home_Icons</include>
+            <control type="list" id="308">
+                <description>TV Shows submenu</description>
+                <animation effect="slide" start="0,0" end="0,-90" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(308)</visible>
+                <include>SubMenu_Common</include>
+                <onup>308</onup>
+                <ondown>308</ondown>
+                <content>
+                    <item id="1">
+                        <description>Random episode</description>
+                        <label>31420</label>
+                        <onclick>$INFO[Window.Property(RandomEpisode.1.Path),PlayMedia(,)]</onclick>
+                    </item>
+                    <item id="2">
+                        <description>Files</description>
+                        <label>744</label>
+                        <onclick>ActivateWindow(VideoFiles,return)</onclick>
+                    </item>
+                    <item id="3">
+                        <description>Genre</description>
+                        <label>515</label>
+                        <onclick>ActivateWindow(VideoLibrary,TVShowGenres,return)</onclick>
+                    </item>
+                    <item id="4">
+                        <description>Year</description>
+                        <label>562</label>
+                        <onclick>ActivateWindow(VideoLibrary,TVShowYears,return)</onclick>
+                    </item>
+                    <item id="5">
+                        <description>Actor</description>
+                        <label>344</label>
+                        <onclick>ActivateWindow(VideoLibrary,TVShowActors,return)</onclick>
+                    </item>
+                    <item id="6">
+                        <description>Studios</description>
+                        <label>20388</label>
+                        <onclick>ActivateWindow(VideoLibrary,TVShowStudios,return)</onclick>
+                    </item>
+                    <item id="7">
+                        <description>Recently Added</description>
+                        <label>31020</label>
+                        <onclick>ActivateWindow(VideoLibrary,RecentlyAddedEpisodes,return)</onclick>
+                    </item>
+                    <item id="8">
+                        <description>Addons</description>
+                        <label>31007</label>
+                        <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="309">
+                <description>Movies submenu</description>
+                <animation effect="slide" start="0,0" end="0,-90" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(309)</visible>
+                <include>SubMenu_Common</include>
+                <onup>309</onup>
+                <ondown>309</ondown>
+                <content>
+                    <item id="1">
+                        <description>Random movie</description>
+                        <label>31419</label>
+                        <onclick>$INFO[Window.Property(RandomMovie.1.Path),PlayMedia(,)]</onclick>
+                    </item>
+                    <item id="2">
+                        <description>Files</description>
+                        <label>744</label>
+                        <onclick>ActivateWindow(VideoFiles,return)</onclick>
+                    </item>
+                    <item id="3">
+                        <description>Genre</description>
+                        <label>515</label>
+                        <onclick>ActivateWindow(VideoLibrary,MovieGenres,return)</onclick>
+                    </item>
+                    <item id="4">
+                        <description>Year</description>
+                        <label>562</label>
+                        <onclick>ActivateWindow(VideoLibrary,MovieYears,return)</onclick>
+                    </item>
+                    <item id="5">
+                        <description>Actors</description>
+                        <label>344</label>
+                        <onclick>ActivateWindow(VideoLibrary,MovieActors,return)</onclick>
+                    </item>
+                    <item id="6">
+                        <description>Directors</description>
+                        <label>20348</label>
+                        <onclick>ActivateWindow(VideoLibrary,MovieDirectors,return)</onclick>
+                    </item>
+                    <item id="7">
+                        <description>Recently Added</description>
+                        <label>31020</label>
+                        <onclick>ActivateWindow(VideoLibrary,RecentlyAddedMovies,return)</onclick>
+                    </item>
+                    <item id="8">
+                        <description>Addons</description>
+                        <label>31007</label>
+                        <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="310">
+                <description>Weather submenu</description>
+                <animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(310)</visible>
+                <include>SubMenu_Common</include>
+                <onup>310</onup>
+                <ondown>310</ondown>
+                <content>
+                    <item id="1">
+                        <icon>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</icon>
+                        <label>$INFO[Window(Weather).Property(Day1.Title)] $INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                        <label2>$INFO[Window(Weather).Property(Day1.Outlook)]</label2>
+                        <onclick>ActivateWindow(weather)</onclick>
+                    </item>
+                    <item id="2">
+                        <icon>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</icon>
+                        <label>$INFO[Window(Weather).Property(Day2.Title)] $INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                        <label2>$INFO[Window(Weather).Property(Day3.Outlook)]</label2>
+                        <onclick>ActivateWindow(weather)</onclick>
+                    </item>
+                    <item id="3">
+                        <icon>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</icon>
+                        <label>$INFO[Window(Weather).Property(Day3.Title)] $INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
+                        <label2>$INFO[Window(Weather).Property(Day3.Outlook)]</label2>
+                        <onclick>ActivateWindow(weather)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="311">
+                <description>Music submenu</description>
+                <animation effect="slide" start="0,0" end="0,-90" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(311)</visible>
+                <include>SubMenu_Common</include>
+                <onup>311</onup>
+                <ondown>311</ondown>
+                <content>
+                    <item id="1">
+                        <description>Random song</description>
+                        <label>31417</label>
+                        <onclick>$INFO[Window.Property(RandomSong.1.Path),PlayMedia(,)]</onclick>
+                    </item>
+                    <item id="2">
+                        <description>Files</description>
+                        <label>744</label>
+                        <onclick>ActivateWindow(MusicFiles,return)</onclick>
+                    </item>
+                    <item id="3">
+                        <description>Genre</description>
+                        <label>515</label>
+                        <onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
+                    </item>
+                    <item id="4">
+                        <description>Artists</description>
+                        <label>133</label>
+                        <onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+                    </item>
+                    <item id="5">
+                        <description>Albums</description>
+                        <label>132</label>
+                        <onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+                    </item>
+                    <item id="6">
+                        <description>Songs</description>
+                        <label>134</label>
+                        <onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+                    </item>
+                    <item id="7">
+                        <description>Recently Added</description>
+                        <label>359</label>
+                        <onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+                    </item>
+                    <item id="8">
+                        <description>Addons</description>
+                        <label>31007</label>
+                        <onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="312">
+                <description>Videos submenu</description>
+                <animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(312)</visible>
+                <include>SubMenu_Common</include>
+                <onup>312</onup>
+                <ondown>312</ondown>
+                <content>
+                    <item id="1">
+                        <description>Video addons</description>
+                        <label>1037</label>
+                        <onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+                    </item>
+                    <item id="2">
+                        <description>Music videos</description>
+                        <label>20389</label>
+                        <onclick>ActivateWindow(VideoLibrary,MusicvideoTitles,return)</onclick>
+                    </item>
+                    <item id="3">
+                        <label>20012</label>
+                        <onclick>ActivateWindow(VideoLibrary,Playlists,Return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="313">
+                <description>Pictures submenu</description>
+                <animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,50" time="0" condition="Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(313)</visible>
+                <include>SubMenu_Common</include>
+                <onup>313</onup>
+                <ondown>313</ondown>
+                <content>
+                    <item id="1">
+                        <label>1039</label>
+                        <onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="314">
+                <description>Apps submenu</description>
+                <animation effect="slide" start="0,0" end="0,50" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,50" time="0" condition="Skin.HasSetting(Home_Centered_Menu) | Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(314)</visible>
+                <include>SubMenu_Common</include>
+                <onup>314</onup>
+                <ondown>314</ondown>
+                <content>
+                    <item id="1">
+                        <description>Favourites</description>
+                        <label>1036</label>
+                        <onclick>ActivateWindow(Favourites,return)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="315">
+                <description>Settings submenu</description>
+                <animation effect="slide" start="0,0" end="0,10" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(315)</visible>
+                <include>SubMenu_Common</include>
+                <onup>315</onup>
+                <ondown>315</ondown>
+                <content>
+                    <item id="1">
+                        <label>130</label>
+                        <onclick>ActivateWindow(SystemInfo)</onclick>
+                    </item>
+                    <item id="2">
+                        <label>13200</label>
+                        <onclick>ActivateWindow(Profiles)</onclick>
+                    </item>
+                    <item id="3">
+                        <label>7</label>
+                        <onclick>ActivateWindow(FileManager)</onclick>
+                    </item>
+                </content>
+            </control>
+            <control type="list" id="316">
+                <description>Shutdown submenu</description>
+                <animation effect="slide" start="0,0" end="0,-30" time="0" condition="!Skin.HasSetting(Home_Centered_Menu) + !Skin.HasSetting(Home_Semi_Centered_Menu)">conditional</animation>
+                <animation effect="fade" start="0" end="100" reversible="false" time="400">VisibleChange</animation>
+                <visible allowhiddenfocus="true">Control.HasFocus(316)</visible>
+                <include>SubMenu_Common</include>
+                <onup>316</onup>
+                <ondown>316</ondown>
+                <content>
+                    <item id="1">
+                        <label>13012</label>
+                        <onclick>Quit()</onclick>
+                    </item>
+                    <item id="2">
+                        <label>13005</label>
+                        <onclick>Shutdown()</onclick>
+                    </item>
+                    <item id="3">
+                        <label>13013</label>
+                        <onclick>Reset()</onclick>
+                        <visible>System.CanReboot</visible>
+                    </item>
+                    <item id="4">
+                        <label>13011</label>
+                        <onclick>Suspend()</onclick>
+                        <visible>System.CanSuspend</visible>
+                    </item>
+                    <item id="5">
+                        <label>13010</label>
+                        <onclick>Hibernate()</onclick>
+                        <visible>System.CanHibernate</visible>
+                    </item>
+                    <item id="6">
+                        <label>20126</label>
+                        <onclick>System.LogOff</onclick>
+                        <visible>System.HasLoginScreen</visible>
+                        <visible>!Skin.HasSetting(HideLogoff)</visible>
+                    </item>
+                </content>
+            </control>
+        </control>
+    </include>
+</includes>

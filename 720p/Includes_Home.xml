@@ -1,0 +1,68 @@
+<includes>
+    <include name="Home_Submenu_Common">
+        <posx>240</posx>
+        <posy>-15</posy>
+        <orientation>horizontal</orientation>
+        <viewtype>list</viewtype>
+        <ondown>300</ondown>
+        <onup>300</onup>
+        <scrolltime>200</scrolltime>
+        <width>800</width>
+        <height>30</height>
+        <animation type="hidden" reversible="false">
+            <effect type="fade" start="100" end="0" time="100" />
+            <effect type="slide" start="0,0" end="0,30" time="100" />
+        </animation>
+        <animation type="visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="100" />
+            <effect type="slide" start="0,30" end="0,0" time="100" />
+        </animation>
+        <itemlayout width="200">
+            <control type="label">
+                <posx>100</posx>
+                <posy>0</posy>
+                <width>200</width>
+                <height>30</height>
+                <font>Font_Condensed_Caps_18</font>
+                <info>Listitem.Label</info>
+                <textcolor>55ffffff</textcolor>
+                <shadowcolor>55000000</shadowcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+        </itemlayout>
+        <focusedlayout width="200">
+            <control type="label">
+                <posx>100</posx>
+                <posy>0</posy>
+                <width>200</width>
+                <height>30</height>
+                <font>Font_Condensed_Caps_18</font>
+                <info>Listitem.Label</info>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <animation effect="zoom" center="100,15" start="120" end="100" reversible="false" time="200">Focus</animation>
+                <visible>!Control.HasFocus(308)</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>200</width>
+                <height>30</height>
+                <font>Font_Condensed_Caps_18</font>
+                <info>Container(308).Listitem.Label</info>
+                <info>Container(308).ListItem.Label2</info>
+                <textcolor>ffffffff</textcolor>
+                <shadowcolor>ff000000</shadowcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <pauseatend>1500</pauseatend>
+                <scrollout>false</scrollout>
+                <animation effect="zoom" center="100,15" start="120" end="100" reversible="false" time="200">Focus</animation>
+                <visible>Control.HasFocus(308)</visible>
+            </control>
+        </focusedlayout>
+    </include>
+</includes>

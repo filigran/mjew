@@ -1,0 +1,138 @@
+<window id="12">
+    <defaultcontrol>3</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="group">
+            <visible>!Window.Previous(Weather) + !Window.Previous(VideoFiles) + !Window.Previous(VideoLibrary) + !Window.Previous(MusicFiles) + !Window.Previous(MusicLibrary) + !Window.Previous(Pictures) + !Window.Previous(Programs)</visible>
+            <include>CommonSettingsBackground</include>
+        </control>
+        <control type="group">
+            <visible>Window.Previous(Weather)</visible>
+            <include>CommonWeatherBackground</include>
+        </control>
+        <control type="group">
+            <visible>Window.Previous(Programs)</visible>
+            <include>CommonProgramsBackground</include>
+        </control>
+        <control type="group">
+            <visible>Window.Previous(VideoFiles) | Window.Previous(VideoLibrary)</visible>
+            <include>CommonVideoBackground</include>
+        </control>
+        <control type="group">
+            <visible>Window.Previous(MusicFiles) | Window.Previous(MusicLibrary) | Window.Previous(Pictures)</visible>
+            <include>CommonMusicBackground</include>
+        </control>
+        <control type="group">
+            <visible>Window.Previous(Pictures)</visible>
+            <include>CommonPictureBackground</include>
+        </control>
+        <include>CommonMediaPlayingBackground</include>
+        <include>Global_BackgroundDiffuser</include>
+        <control type="group">
+            <posx>80</posx>
+            <posy>50</posy>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+                <effect type="fade" start="0" end="100" time="300" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+                <effect type="fade" start="100" end="0" time="300" />
+            </animation>
+            <control type="grouplist" id="3">
+                <description>button area</description>
+                <posx>0</posx>
+                <posy>60</posy>
+                <width>320</width>
+                <height>481</height>
+                <onleft>60</onleft>
+                <onright>5</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
+            </control>
+            <control type="grouplist" id="5">
+                <description>control area</description>
+                <posx>350</posx>
+                <posy>70</posy>
+                <width>750</width>
+                <height>530</height>
+                <itemgap>-1</itemgap>
+                <pagecontrol>60</pagecontrol>
+                <onleft>3</onleft>
+                <onright>60</onright>
+                <onup>5</onup>
+                <ondown>5</ondown>
+            </control>
+            <control type="scrollbar" id="60">
+                <posx>1060</posx>
+                <posy>60</posy>
+                <width>25</width>
+                <height>530</height>
+                <texturesliderbackground border="0,14,0,14">ScrollBarV.png</texturesliderbackground>
+                <texturesliderbar border="0,14,0,14">ScrollBarV_bar.png</texturesliderbar>
+                <texturesliderbarfocus border="0,14,0,14">ScrollBarV_bar_focus.png</texturesliderbarfocus>
+                <textureslidernib>ScrollBarNib.png</textureslidernib>
+                <textureslidernibfocus>ScrollBarNib.png</textureslidernibfocus>
+                <onleft>5</onleft>
+                <onright>3</onright>
+                <showonepage>false</showonepage>
+                <orientation>vertical</orientation>
+            </control>
+        </control>
+        <!--<include>BehindDialogFadeOut</include>-->
+        <control type="button" id="10">
+            <description>Default Category Button</description>
+            <height>50</height>
+            <width>370</width>
+            <textoffsetx>50</textoffsetx>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>Font_Normal_Bold_Caps_24</font>
+            <textcolor>white</textcolor>
+            <shadowcolor>black</shadowcolor>
+            <focusedcolor>ff00b8f5</focusedcolor>
+            <texturefocus>-</texturefocus>
+            <texturenofocus>-</texturenofocus>
+            <pulseonselect>false</pulseonselect>
+        </control>
+        <control type="button" id="7">
+            <description>Default Button</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <font>Font_Normal_20</font>
+            <textcolor>white</textcolor>
+            <focusedcolor>ff00b8f5</focusedcolor>
+            <texturefocus>-</texturefocus>
+            <texturenofocus>-</texturenofocus>
+        </control>
+        <control type="radiobutton" id="8">
+            <description>Default RadioButton</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <font>Font_Normal_20</font>
+            <textcolor>white</textcolor>
+            <focusedcolor>ff00b8f5</focusedcolor>
+            <texturefocus>-</texturefocus>
+            <texturenofocus>-</texturenofocus>
+        </control>
+        <control type="spincontrolex" id="9">
+            <description>Default SpinControlex</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <font>font13</font>
+            <textcolor>white</textcolor>
+            <focusedcolor>ff00b8f5</focusedcolor>
+            <texturefocus>-</texturefocus>
+            <texturenofocus>-</texturenofocus>
+            <aligny>center</aligny>
+            <reverse>yes</reverse>
+        </control>
+        <include>Global_DialogDiffuser</include>
+        <include>Global_Time</include>
+        <include>Global_Weather</include>
+        <include condition="Skin.HasSetting(Show_RSS_Everywhere)">Global_RSS_Feed</include>
+    </controls>
+</window>
