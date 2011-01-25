@@ -12,6 +12,19 @@
             <label>-</label>
             <font>-</font>
             <onfocus>XBMC.RunScript(script.recentlyadded,totals=True&amp;limit=5)</onfocus>
+            <onfocus>SetFocus(5044)</onfocus>
+            <texturenofocus>-</texturenofocus>
+            <texturefocus>-</texturefocus>
+        </control>
+        <control type="button" id="5044">
+            <description>Run Next aired</description>
+            <posx>-20</posx>
+            <posy>-20</posy>
+            <width>1</width>
+            <height>1</height>
+            <label>-</label>
+            <font>-</font>
+            <onfocus>XBMC.RunScript(script.tv.show.next.aired,silent=True)</onfocus>
             <onfocus>SetFocus(50)</onfocus>
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>
@@ -79,51 +92,19 @@
                 <include>Global_BackgroundDiffuser</include>
             </control>
             <control type="group">
-            <visible>Control.IsVisible(521) | Control.IsVisible(509)</visible>
-            <control type="image"> <!-- fanart overlay -->
-                <description>Fanart overlay</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>720</height>
-                <texture background="true">white.png</texture>
-                <colordiffuse>55000000</colordiffuse>
-            </control>
-            <control type="group"> <!-- bottom part -->
-                <description>Bottom part</description>
-                <posx>0</posx>
-                <posy>608</posy>
-                <animation effect="slide" start="0,0" end="0,-30" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
-                <control type="image"> <!-- bottom background -->
-                    <description>Bottom background</description>
+                <visible>Control.IsVisible(521) | Control.IsVisible(509)</visible>
+                <control type="image"> <!-- fanart overlay -->
+                    <description>Fanart overlay</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>1280</width>
-                    <height>112</height>
+                    <height>720</height>
                     <texture background="true">white.png</texture>
-                    <colordiffuse>cc284d56</colordiffuse>
+                    <colordiffuse>55000000</colordiffuse>
                 </control>
-                <control type="image"> <!-- bottom background gradient -->
-                    <description>Bottom background gradient</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1280</width>
-                    <height>112</height>
-                    <texture background="true">mjew/home_bottom_gradient.png</texture>
-                    <colordiffuse>ff498999</colordiffuse>
-                </control>
-                <control type="image"> <!-- bottom background top border -->
-                    <description>Bottom background top border</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1280</width>
-                    <height>1</height>
-                    <texture background="true">white.png</texture>
-                    <colordiffuse>ff498999</colordiffuse>
-                </control>
+                <include>Bottom_Part</include>
             </control>
-        </control>
-        <control type="group">
+            <control type="group">
                 <visible>!Window.IsVisible(MovieInformation)</visible>
                 <animation effect="fade" start="0" end="100" easing="out" time="200">VisibleChange</animation>
                 <include>Window_OpenClose_Animation</include>
@@ -141,6 +122,7 @@
             <include>Scrolling_Letter</include>
             <include condition="Skin.HasSetting(Show_RSS_Everywhere)">Global_RSS</include>
             <include>Now_Playing</include>
+            <include>Totals_Count</include>
             <include>Global_DialogDiffuser</include>
             <include>Global_Time</include>
             <include>Global_Weather</include>

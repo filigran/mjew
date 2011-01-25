@@ -530,6 +530,11 @@
                 <align>left</align>
                 <label>$INFO[Container(515).NumItems,, $LOCALIZE[20360]]</label>
             </control>
+            <control type="group">
+                <posx>500</posx>
+                <posy>690</posy>
+                <include>Next_Aired</include>
+            </control>
             <control type="textbox">
                 <description>TV Show plot if not small fanart</description>
                 <posx>50</posx>

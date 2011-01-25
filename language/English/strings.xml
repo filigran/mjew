@@ -208,9 +208,8 @@
   <string id="31409">No plot available.</string>
   <string id="31410">min</string> <!-- short for minutes as in "96 min" for movie duration -->
   <string id="31411">Weather info has not been fetched</string>
-  <string id="31412">Show navigation hints</string>
-  <string id="31413">Show info</string>
-  <string id="31414">Show media flags</string>
+  <string id="31413">Automatic info</string>
+  <string id="31414">Media flags</string>
   <string id="31415">Poster Wrap</string>
   <string id="31416">Poster Fixed</string>
   <string id="31417">Play random song</string>
@@ -220,10 +219,11 @@
   <string id="31422">General Options</string>
   <string id="31423">Logo Wrap</string>
   <string id="31424">Logo Fixed</string>
-  <string id="31425">Show cover-overlays</string>
+  <string id="31425">Cover-overlays</string>
   <string id="31426">MPAA</string>
   <string id="31427">Logo[CR][CR]Unavailable[CR][CR] Click button to set</string>
   <string id="31437">Time remaining:</string>
   <string id="31438">Show weather information (press up when 'Weather' is highlighted)</string>
   <string id="31439">Timer set: The system will shut down in</string>
+  <string id="31440">Next episode</string>
 </strings>

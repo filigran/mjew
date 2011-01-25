@@ -193,6 +193,16 @@
             <size>50</size>
         </font>
         <font>
+            <name>Font_Condensed_16</name>
+            <filename>Condensed.ttf</filename>
+            <size>16</size>
+        </font>
+        <font>
+            <name>Font_Condensed_18</name>
+            <filename>Condensed.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
             <name>Font_Condensed_20</name>
             <filename>Condensed.ttf</filename>
             <size>20</size>
@@ -211,6 +221,11 @@
             <name>Font_Condensed_Caps_18</name>
             <filename>Condensed_Caps.ttf</filename>
             <size>18</size>
+        </font>
+        <font>
+            <name>Font_Condensed_Caps_20</name>
+            <filename>Condensed_Caps.ttf</filename>
+            <size>20</size>
         </font>
         <font>
             <name>Font_Condensed_Caps_24</name>

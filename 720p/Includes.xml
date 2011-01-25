@@ -2,6 +2,8 @@
     <!-- MJEW -->
     <include file="Includes_Home.xml" />
     <include file="Includes_NowPlaying.xml" />
+    <include file="Includes_LeftMenu.xml" />
+    <include file="Includes_Video.xml" />
     <!-- SLUT MJEW -->
     <include file="defaults.xml" />
     <include file="ViewsVideoLibrary.xml" />
@@ -20,11 +22,209 @@
     <include file="Includes_Launcher.xml" />
     <include file="Includes_Viewtypes.xml" />
     <include file="IncludesCodecFlagging.xml" />
-    <include file="Includes_Video.xml" />
     <include file="Includes_Programs.xml" />
     <include file="Includes_Animations.xml" />
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
+    <include name="Bottom_Part">
+        <control type="group"> <!-- bottom part -->
+            <description>Bottom part</description>
+            <posx>0</posx>
+            <posy>608</posy>
+            <animation effect="slide" start="0,0" end="0,-30" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
+            <control type="image"> <!-- bottom background -->
+                <description>Bottom background</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>112</height>
+                <texture background="true">white.png</texture>
+                <colordiffuse>cc284d56</colordiffuse>
+            </control>
+            <control type="image"> <!-- bottom background gradient -->
+                <description>Bottom background gradient</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>112</height>
+                <texture background="true">mjew/home_bottom_gradient.png</texture>
+                <colordiffuse>ff498999</colordiffuse>
+            </control>
+            <control type="image"> <!-- bottom background top border -->
+                <description>Bottom background top border</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>1</height>
+                <texture background="true">white.png</texture>
+                <colordiffuse>ff498999</colordiffuse>
+            </control>
+        </control>
+    </include>
+    <include name="Next_Aired_Common">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>600</width>
+        <height>20</height>
+        <font>Font_Condensed_Caps_18</font>
+        <textcolor>white</textcolor>
+        <shadowcolor>black</shadowcolor>
+        <align>center</align>
+        <scroll>true</scroll>
+        <scrollspeed>30</scrollspeed>
+    </include>
+    <include name="Next_Aired">
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.1.NextDate)]$INFO[Window(Home).Property(NextAired.1.NextTitle), - ]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.2.NextDate)] - $INFO[Window(Home).Property(NextAired.2.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.3.NextDate)] - $INFO[Window(Home).Property(NextAired.3.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.4.NextDate)] - $INFO[Window(Home).Property(NextAired.4.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.5.NextDate)] - $INFO[Window(Home).Property(NextAired.5.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.6.NextDate)] - $INFO[Window(Home).Property(NextAired.6.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.7.NextDate)] - $INFO[Window(Home).Property(NextAired.7.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.8.NextDate)] - $INFO[Window(Home).Property(NextAired.8.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.9.NextDate)] - $INFO[Window(Home).Property(NextAired.9.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.10.NextDate)] - $INFO[Window(Home).Property(NextAired.10.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.11.NextDate)] - $INFO[Window(Home).Property(NextAired.11.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.12.NextDate)] - $INFO[Window(Home).Property(NextAired.12.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.13.NextDate)] - $INFO[Window(Home).Property(NextAired.13.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.14.NextDate)] - $INFO[Window(Home).Property(NextAired.14.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.TVShowTitle)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.15.NextDate)] - $INFO[Window(Home).Property(NextAired.15.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.16.NextDate)] - $INFO[Window(Home).Property(NextAired.16.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.17.NextDate)] - $INFO[Window(Home).Property(NextAired.17.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.18.NextDate)] - $INFO[Window(Home).Property(NextAired.18.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.19.NextDate)] - $INFO[Window(Home).Property(NextAired.19.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.19.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.20.NextDate)] - $INFO[Window(Home).Property(NextAired.20.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.21.NextDate)] - $INFO[Window(Home).Property(NextAired.21.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.22.NextDate)] - $INFO[Window(Home).Property(NextAired.22.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.23.NextDate)] - $INFO[Window(Home).Property(NextAired.23.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.24.NextDate)] - $INFO[Window(Home).Property(NextAired.24.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.25.NextDate)] - $INFO[Window(Home).Property(NextAired.25.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.26.NextDate)] - $INFO[Window(Home).Property(NextAired.26.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.27.NextDate)] - $INFO[Window(Home).Property(NextAired.27.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.28.NextDate)] - $INFO[Window(Home).Property(NextAired.28.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.29.NextDate)] - $INFO[Window(Home).Property(NextAired.29.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.Label)</visible>
+        </control>
+        <control type="label">
+            <include>Next_Aired_Common</include>
+            <label>$LOCALIZE[31440]: $INFO[Window(Home).Property(NextAired.30.NextDate)] - $INFO[Window(Home).Property(NextAired.30.NextTitle)]</label>
+            <visible>StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.Label)</visible>
+        </control>
+    </include>
     <include name="Global_Time">
         <control type="group">
             <description>Time and date</description>
@@ -452,8 +652,8 @@
         <animation reversible="false" effect="zoom" center="auto" start="100" end="120" time="100">focus</animation>
     </include>
     <include name="Settings_Description_LabelTemplate">
-        <posx>282</posx>
-        <posy>486</posy>
+        <posx>650</posx>
+        <posy>50</posy>
         <width>740</width>
         <height>30</height>
         <font>Font_Normal_Bold_Caps_24</font>

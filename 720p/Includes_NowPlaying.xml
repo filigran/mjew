@@ -3,7 +3,7 @@
     <control type="group">
             <posx>0</posx>
             <posy>608</posy>
-            <animation effect="slide" start="0,0" end="0,-30" condition="System.GetBool(lookandfeel.enablerssfeeds)">conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-30" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
             <control type="group"> <!-- now playing music -->
                 <description>Now playing music</description>
                 <posx>20</posx>
@@ -62,15 +62,26 @@
                     <width>180</width>
                     <height>101</height>
                 </control>
-                <control type="label">
+                <control type="image">
+                    <description>Frame</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>180</width>
+                    <height>101</height>
+                    <colordiffuse>ff498999</colordiffuse>
+                    <texture>16x9_frame.png</texture>
+                </control>
+                <control type="fadelabel">
                     <posx>190</posx>
                     <posy>56</posy>
-                    <width>800</width>
+                    <width>340</width>
                     <height>20</height>
                     <font>Font_Condensed_Caps_18</font>
                     <label>[B]$INFO[VideoPlayer.Title][/B]</label>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>3000</pauseatend>
                 </control>
                 <control type="label">
                     <posx>190</posx>
@@ -94,25 +105,38 @@
                     <width>180</width>
                     <height>101</height>
                 </control>
-                <control type="label">
+                <control type="image">
+                    <description>Frame</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>180</width>
+                    <height>101</height>
+                    <colordiffuse>ff498999</colordiffuse>
+                    <texture>mjew/now_playing_frame.png</texture>
+                </control>
+                <control type="fadelabel">
                     <posx>190</posx>
                     <posy>56</posy>
-                    <width>800</width>
+                    <width>340</width>
                     <height>20</height>
                     <font>Font_Condensed_Caps_18</font>
                     <label>$INFO[VideoPlayer.Title] ($INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration])</label>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>3000</pauseatend>
                 </control>
-                <control type="label">
+                <control type="fadelabel">
                     <posx>190</posx>
                     <posy>81</posy>
-                    <width>800</width>
+                    <width>500</width>
                     <height>20</height>
                     <font>Font_Condensed_Caps_18</font>
                     <label>[B]$INFO[VideoPlayer.TVShowTitle][/B]  $INFO[VideoPlayer.Season,Säsong ], $INFO[VideoPlayer.Episode,Avsnitt ]</label>
                     <textcolor>ffffffff</textcolor>
                     <shadowcolor>ff000000</shadowcolor>
+                    <scrollout>false</scrollout>
+                    <pauseatend>3000</pauseatend>
                 </control>
             </control>
         </control>

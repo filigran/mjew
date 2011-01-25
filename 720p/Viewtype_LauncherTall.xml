@@ -46,7 +46,7 @@
                         <width>124</width>
                         <height>178</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture diffuse="poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <texture background="true" diffuse="poster_diffuse.png">$INFO[ListItem.Icon]</texture>
                         <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
                     </control>
                     <control type="image">

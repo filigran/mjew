@@ -46,7 +46,7 @@
                         <width>120</width>
                         <height>120</height>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="square_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <texture background="true" diffuse="square_diffuse.png">$INFO[ListItem.Icon]</texture>
                         <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
                     </control>
                     <control type="image">
