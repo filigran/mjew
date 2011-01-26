@@ -132,15 +132,15 @@
   <string id="31355">Movie menu</string>
   <string id="31356">Download Subtitles</string>
 
-  <string id="31428">Configure Appearance Settings</string>
-  <string id="31429">Configure Video Settings</string>
-  <string id="31430">Configure Music Settings</string>
-  <string id="31431">Configure Picture Settings</string>
-  <string id="31432">Configure Weather Settings</string>
-  <string id="31433">Configure Add-ons</string>
-  <string id="31434">Configure Network Settings</string>
-  <string id="31435">Configure System Settings</string>
-  <string id="31436">Configure Skin Settings</string>
+  <string id="31428">Appearance</string>
+  <string id="31429">Video</string>
+  <string id="31430">Music</string>
+  <string id="31431">Pictures</string>
+  <string id="31432">Weather</string>
+  <string id="31433">Add-ons</string>
+  <string id="31434">Network</string>
+  <string id="31435">System</string>
+  <string id="31436">Mjew</string>
   <string id="31400">Change skin, language and region, file listing options, choose sound effects and set up a screensaver.</string>
   <string id="31401">Manage your video library, set video playback options and adjust subtitle appearance.</string>
   <string id="31402">Manage your music library, set music playback options, adjust track naming and settings for Last.FM, audio CDs and karaoke.</string>
@@ -149,7 +149,7 @@
   <string id="31408">Install new add-ons and configure the ones you already have.</string>
   <string id="31405">Setup control of XBMC via UPnP and HTTP, configure file sharing and set internet access options.</string>
   <string id="31406">Set your resolution and calibrate your display, configure audio output and remote controls, set power saving options, enable debugging and setup master lock.</string>
-  <string id="31407">Set Sensus up so that it looks just like you want it to. Set background paths, home menu options and much more.</string>
+  <string id="31407">Set Mjew up so that it looks just like you want it to. Set background paths, home menu options and much more.</string>
 
   <string id="31421">Select your XBMC user Profile[CR]to login and continue</string>
 
@@ -226,4 +226,5 @@
   <string id="31438">Show weather information (press up when 'Weather' is highlighted)</string>
   <string id="31439">Timer set: The system will shut down in</string>
   <string id="31440">Next episode</string>
+  <string id="31441">Hide Watched Overlay</string>
 </strings>

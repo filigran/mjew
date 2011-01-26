@@ -534,23 +534,13 @@
             <description>Buttons for onup conditions</description>
             <posx>-2000</posx>
             <control type="button">
-                <description>Movies or tvshow content, Posters at bottom and up press from list 520/521 if info enabled</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Info)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom) + Skin.HasSetting(TVShows_Show_Info)] | Window.IsVisible(VideoFiles)]</visible>
+                <description>Movies content, up press from list 520/521 if info enabled</description>
+                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [Container.Content(Movies) + Skin.HasSetting(Movies_Show_Info)]</visible>
                 <onfocus>SetFocus(700)</onfocus>
             </control>
             <control type="button">
-                <description>Movies or tvshow content, Posters at bottom and up press from list 520/521 if info disabled</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Info)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom) + !Skin.HasSetting(TVShows_Show_Info)] | Window.IsVisible(VideoFiles)]</visible>
-                <onfocus>SetFocus(9000)</onfocus>
-            </control>
-            <control type="button">
-                <description>Movies or tvshows content, Posters centered and up press from list 520/521 if info enabled</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + Skin.HasSetting(Movies_Show_Info)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom) + Skin.HasSetting(TVShows_Show_Info)] | Window.IsVisible(VideoFiles)]</visible>
-                <onfocus>SetFocus(701)</onfocus>
-            </control>
-            <control type="button">
-                <description>Movies or tvshows content, Posters centered and up press from list 520/521 if info disabled</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Posters_Bottom) + !Skin.HasSetting(Movies_Show_Info)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom) + !Skin.HasSetting(TVShows_Show_Info)] | Window.IsVisible(VideoFiles)]</visible>
+                <description>Up press from list 520/521 if info disabled</description>
+                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Info)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Info)]]</visible>
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
@@ -559,14 +549,14 @@
                 <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
-                <description>Episodes content, thumbs at bottom and up press from list 520/521</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]]</visible>
+                <description>Episodes content, up press from list 520/521 if info enabled</description>
+                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Info)]</visible>
                 <onfocus>SetFocus(702)</onfocus>
             </control>
             <control type="button">
-                <description>Episodes content, thumbs centered and up press from list 520/521</description>
-                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]]</visible>
-                <onfocus>SetFocus(703)</onfocus>
+                <description>Episodes content, up press from list 520/521 if info disabled</description>
+                <visible>[[Control.IsVisible(520) + Control.HasFocus(520)] | [Control.IsVisible(521) + Control.HasFocus(521)]] + [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Info)]</visible>
+                <onfocus>SetFocus(9000)</onfocus>
             </control>
             <control type="button">
                 <description>Up press from scrollbar 60 with list 520 visible</description>
@@ -625,14 +615,7 @@
             <visible>Control.IsVisible(520) | Control.IsVisible(521)</visible>
             <include>VisibleFadeEffect</include>
             <posx>0</posx>
-            <posy>204</posy>
-            <animation reversible="false" effect="slide" start="0,0" end="0,216" tween="back" easing="out" time="400" condition="[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,216" end="0,0" tween="back" easing="out" time="400" condition="[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Posters_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="-40,200" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,200" end="-40,-21" tween="back" easing="out" time="400" condition="[Container.Content(Episodes) + !Skin.HasSetting(Episodes_Thumbs_Bottom)]">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,276" tween="back" easing="out" time="400" condition="Container.Content(Albums) + !Skin.HasSetting(Albums_Covers_Bottom)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,276" end="0,0" tween="back" easing="out" time="400" condition="Container.Content(Albums) + Skin.HasSetting(Albums_Covers_Bottom)">conditional</animation>
-            <animation reversible="false" effect="slide" start="0,0" end="0,-30" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
+            <posy>420</posy>
             <control type="wraplist" id="520">
                 <onleft>520</onleft>
                 <onright>520</onright>
@@ -681,7 +664,7 @@
         <control type="group">
             <visible>[Container.Content(Movies) | Container.Content(TVShows) | Window.IsVisible(VideoFiles)] + [Control.IsVisible(520) | Control.IsVisible(521)]</visible>
             <control type="textbox">
-                <description>Plot for movies and tvshows if not centered posters</description>
+                <description>Plot for movies</description>
                 <posx>401</posx>
                 <posy>230</posy>
                 <width>480</width>
@@ -692,24 +675,10 @@
                 <label>$INFO[ListItem.Plot]</label>
                 <pagecontrol>700</pagecontrol>
                 <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
-                <visible>Control.HasFocus(700) + [[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)]]</visible>
-            </control>
-            <control type="textbox">
-                <description>Plot for movies and tvshows if centered posters</description>
-                <posx>742</posx>
-                <posy>314</posy>
-                <width>485</width>
-                <height>100</height>
-                <font>Font_Tahoma_20</font>
-                <align>justify</align>
-                <textcolor>white</textcolor>
-                <label>$INFO[ListItem.Plot]</label>
-                <pagecontrol>701</pagecontrol>
-                <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
-                <visible>Control.HasFocus(701) + [[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)]]</visible>
+                <visible>Control.HasFocus(700)</visible>
             </control>
             <control type="scrollbar" id="700">
-                <description>Plot scrollbar for movies if not posters centered</description>
+                <description>Plot scrollbar for movies</description>
                 <posx>876</posx>
                 <posy>200</posy>
                 <width>52</width>
@@ -721,21 +690,7 @@
                 <orientation>vertical</orientation>
                 <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
                 <animation reversible="false" effect="fade" start="0" end="100" time="400">visible</animation>
-                <visible allowhiddenfocus="true">Control.HasFocus(700) + [[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Posters_Bottom)]]</visible>
-            </control>
-            <control type="scrollbar" id="701">
-                <description>Plot scrollbar for movies if posters centered</description>
-                <posx>1247</posx>
-                <posy>314</posy>
-                <width>26</width>
-                <height>100</height>
-                <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
-                <onleft>903</onleft>
-                <onright>904</onright>
-                <showonepage>true</showonepage>
-                <orientation>vertical</orientation>
-                <animation reversible="false" effect="slide" start="0,0" end="0,-31" tween="back" easing="out" time="400" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
-                <visible allowhiddenfocus="true">Control.HasFocus(701) + [[[Container.Content(Movies) | Window.IsVisible(VideoFiles)] + !Skin.HasSetting(Movies_Posters_Bottom)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Posters_Bottom)]]</visible>
+                <visible allowhiddenfocus="true">Control.HasFocus(700)</visible>
             </control>
             <control type="fadelabel">
                 <description>Title</description>

@@ -4,7 +4,7 @@
     <controls>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
-        <control type="image"> <!-- fanart overlay -->
+        <control type="image">
             <description>Fanart overlay</description>
             <posx>0</posx>
             <posy>0</posy>
@@ -15,7 +15,7 @@
         </control>
         <include>Bottom_Part</include>
         <control type="group">
-            <posx>100</posx>
+            <posx>335</posx>
             <posy>30</posy>
             <control type="image">
                 <description>Settings background</description>
@@ -52,8 +52,35 @@
                         <posy>0</posy>
                         <width>150</width>
                         <height>150</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture diffuse="mjew/settings_diffuse.png" background="true">$INFO[ListItem.Icon]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>150</height>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture diffuse="mjew/settings_diffuse.png">mjew/black.png</texture>
+                        <colordiffuse>80ffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>150</height>
                         <aspectratio>scale</aspectratio>
-                        <texture border="10" background="true">$INFO[ListItem.Icon]</texture>
+                        <texture>mjew/settings_frame.png</texture>
+                        <colordiffuse>20ffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>150</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>mjew/settings_gloss.png</texture>
+                        <colordiffuse>20ffffff</colordiffuse>
                     </control>
                 </itemlayout>
                 <focusedlayout height="190" width="190">
@@ -62,9 +89,29 @@
                         <posy>0</posy>
                         <width>150</width>
                         <height>150</height>
-                        <texture border="10" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="mjew/settings_diffuse.png">$INFO[ListItem.Icon]</texture>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>150</height>
                         <aspectratio>scale</aspectratio>
-                        <colordiffuse>ff00b8f5</colordiffuse>
+                        <texture>mjew/settings_frame.png</texture>
+                        <colordiffuse>ff498999</colordiffuse>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>150</width>
+                        <height>150</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture>mjew/settings_gloss.png</texture>
+                        <colordiffuse>20ffffff</colordiffuse>
+                        <animation effect="zoom" center="auto" start="50" end="120" time="400" reversible="false" tween="back" easing="out">Focus</animation>
                     </control>
                 </focusedlayout>
                 <content>
@@ -120,7 +167,7 @@
                         <label>166</label>
                         <label2>31407</label2>
                         <onclick>ActivateWindow(1111)</onclick>
-                        <icon>special://skin/media/backgrounds/skinsetting.jpg</icon>
+                        <icon>special://skin/logo.png</icon>
                     </item>
                 </content>
             </control>
@@ -180,18 +227,23 @@
             </control>
             <control type="textbox">
                 <description>Category description</description>
-                <posx>650</posx>
-                <posy>90</posy>
-                <width>500</width>
+                <posx>-310</posx>
+                <posy>80</posy>
+                <width>290</width>
                 <height>100</height>
                 <font>Font_Tahoma_20</font>
                 <label>$INFO[Container(9000).ListItem.Label2]</label>
                 <align>left</align>
                 <textcolor>white</textcolor>
                 <shadowcolor>black</shadowcolor>
+                <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
+                <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
+                <animation effect="slide" start="0,0" end="0,380" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+                <animation effect="slide" start="0,0" end="950,0" time="0" condition="Container(9000).HasFocus(3)">conditional</animation>
+                <animation effect="slide" start="0,0" end="950,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
+                <animation effect="slide" start="0,0" end="950,380" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
             </control>
         </control>
-        <!--<include>BehindDialogFadeOut</include>-->
         <include>Global_DialogDiffuser</include>
         <include>Global_Time</include>
         <include>Global_Weather</include>

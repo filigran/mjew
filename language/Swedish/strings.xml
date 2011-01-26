@@ -187,16 +187,17 @@
   <string id="31438">Visa väderinformation (tryck upp när 'Väder' är markerad)</string>
   <string id="31439">Timer satt: Systemet kommer att stängas av om</string>
   <string id="31440">Nästa avsnitt</string>
+  <string id="31441">Dölj visad-indikator</string>
 
   <string id="31428">Utseende</string>
-  <string id="31429">Videoinställningar</string>
-  <string id="31430">Musikinställningar</string>
-  <string id="31431">Bildinställningar</string>
-  <string id="31432">Väderinställningar</string>
-  <string id="31433">Hantera tillägg</string>
-  <string id="31434">Nätverksinställningar</string>
-  <string id="31435">Systeminställningar</string>
-  <string id="31436">Skalinställningar</string>
+  <string id="31429">Video</string>
+  <string id="31430">Musik</string>
+  <string id="31431">Bilder</string>
+  <string id="31432">Väder</string>
+  <string id="31433">Tillägg</string>
+  <string id="31434">Nätverk</string>
+  <string id="31435">System</string>
+  <string id="31436">Mjew</string>
   <string id="31400">Ställ in skal, ljudeffekter, språk, fillistor och skärmsläckare.</string>
   <string id="31401">Ange inställningar för ditt videobibliotek, filmuppspelningsalternativ och undertextutseende.</string>
   <string id="31402">Ange inställningar för ditt musikbibliotek, musikuppspelningsalternativ, låtnamnsutseende, Last.FM-inställningar, musikrippningsalternativ samt inställningar för karaoke.</string>
@@ -205,7 +206,7 @@
   <string id="31408">Installera nya tillägg och konfigurera de du redan har.</string>
   <string id="31405">Ange kontroll av XBMC via UPnP och HTTP, konfigurera fildelning och internetåtkomst.</string>
   <string id="31406">Ange upplösning och kalibrera bildskärmen, konfigurera ljudutgång och inmatningsenheter, ange energisparalternativ, aktivera debugloggning samt konfigurera huvudkod och lås.</string>
-  <string id="31407">Anpassa Sensus så att det ser ut precis som du vill. Ställ in bakgrunder, hemmenyalternativ och mycket mer.</string>
+  <string id="31407">Anpassa Mjew så att det ser ut precis som du vill. Ställ in bakgrunder, hemmenyalternativ och mycket mer.</string>
 
   <string id="31421">Välj din XBMC användarprofil[CR]för att logga in  och fortsätta</string>
 </strings>

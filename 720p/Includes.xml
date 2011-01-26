@@ -27,12 +27,12 @@
     <constant name="FanartCrossfadeTime">500</constant>
     <constant name="IconCrossfadeTime">400</constant>
     <include name="Bottom_Part">
-        <control type="group"> <!-- bottom part -->
+        <control type="group">
             <description>Bottom part</description>
             <posx>0</posx>
             <posy>608</posy>
             <animation effect="slide" start="0,0" end="0,-30" condition="System.GetBool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Show_RSS_Everywhere)">conditional</animation>
-            <control type="image"> <!-- bottom background -->
+            <control type="image">
                 <description>Bottom background</description>
                 <posx>0</posx>
                 <posy>0</posy>
@@ -41,7 +41,7 @@
                 <texture background="true">white.png</texture>
                 <colordiffuse>cc284d56</colordiffuse>
             </control>
-            <control type="image"> <!-- bottom background gradient -->
+            <control type="image">
                 <description>Bottom background gradient</description>
                 <posx>0</posx>
                 <posy>0</posy>
@@ -50,7 +50,7 @@
                 <texture background="true">mjew/home_bottom_gradient.png</texture>
                 <colordiffuse>ff498999</colordiffuse>
             </control>
-            <control type="image"> <!-- bottom background top border -->
+            <control type="image">
                 <description>Bottom background top border</description>
                 <posx>0</posx>
                 <posy>0</posy>
@@ -58,6 +58,44 @@
                 <height>1</height>
                 <texture background="true">white.png</texture>
                 <colordiffuse>ff498999</colordiffuse>
+            </control>
+        </control>
+    </include>
+    <include name="Large_Weather_Icon">
+        <control type="group">
+            <description>Weather icon and temp</description>
+            <posx>120r</posx>
+            <posy>548</posy>
+            <visible>Weather.IsFetched</visible>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>100</width>
+                <height>100</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$INFO[Weather.Conditions]</texture>
+            </control>
+            <control type="image">
+                <description>Weather reflection</description>
+                <posx>0</posx>
+                <posy>100</posy>
+                <width>100</width>
+                <height>100</height>
+                <aspectratio>keep</aspectratio>
+                <texture flipy="true" diffuse="mjew/home_weather_reflection.png" background="true">$INFO[Weather.Conditions]</texture>
+                <colordiffuse>88ffffff</colordiffuse>
+            </control>
+            <control type="label">
+                <posx>-10</posx>
+                <posy>20</posy>
+                <width>80</width>
+                <height>25</height>
+                <font>Font_Condensed_24</font>
+                <label>$INFO[Weather.Temperature]</label>
+                <textcolor>white</textcolor>
+                <align>right</align>
+                <aligny>center</aligny>
+                <shadowcolor>black</shadowcolor>
             </control>
         </control>
     </include>
@@ -526,7 +564,7 @@
             <width>1280</width>
             <height>720</height>
             <texture>special://skin/media/white.png</texture>
-            <colordiffuse>aa000000</colordiffuse>
+            <colordiffuse>55000000</colordiffuse>
         </control>
     </include>
     <include name="MediaFlags">
@@ -652,12 +690,19 @@
         <animation reversible="false" effect="zoom" center="auto" start="100" end="120" time="100">focus</animation>
     </include>
     <include name="Settings_Description_LabelTemplate">
-        <posx>650</posx>
-        <posy>50</posy>
-        <width>740</width>
-        <height>30</height>
+        <posx>-310</posx>
+        <posy>30</posy>
+        <width>290</width>
+        <height>60</height>
+        <aligny>center</aligny>
         <font>Font_Normal_Bold_Caps_24</font>
+        <wrapmultiline>true</wrapmultiline>
         <textcolor>white</textcolor>
+        <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
+        <animation effect="slide" start="0,0" end="0,380" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+        <animation effect="slide" start="0,0" end="950,0" time="0" condition="Container(9000).HasFocus(3)">conditional</animation>
+        <animation effect="slide" start="0,0" end="950,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
+        <animation effect="slide" start="0,0" end="950,380" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
     </include>
     <include name="Skin_Settings_LabelTemplate">
         <width>750</width>

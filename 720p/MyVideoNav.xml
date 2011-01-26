@@ -41,7 +41,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[ListItem.Property(fanart_image)]</texture>
-                <visible>[!Player.HasVideo | [Player.HasVideo + !Skin.HasSetting(Show_Video_Fanart)]] + [[Container.Content(Movies) + Skin.HasSetting(Movies_Show_Fanart)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Fanart)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Fanart)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Fanart)]]</visible>
+                <visible>[!Player.HasVideo | [Player.HasVideo + !Skin.HasSetting(Show_Video_Fanart)]] + [[Container.Content(Movies) + !Skin.HasSetting(Movies_Hide_Fanart)] | [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Hide_Fanart)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Hide_Fanart)] | [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Hide_Fanart)]]</visible>
             </control>
             <control type="image">
                 <description>Default image if no fanart for movies</description>
@@ -52,7 +52,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</texture>
-                <visible>!Player.HasVideo + [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Fanart)]</visible>
+                <visible>!Player.HasVideo + [Container.Content(Movies) + Skin.HasSetting(Movies_Hide_Fanart)]</visible>
             </control>
             <control type="image">
                 <description>Default image if no fanart for tvshows</description>
@@ -63,7 +63,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_TVShows_Folder)]</texture>
-                <visible>!Player.HasVideo + [Container.Content(TVShows) + !Skin.HasSetting(TVShows_Show_Fanart)]</visible>
+                <visible>!Player.HasVideo + [Container.Content(TVShows) + Skin.HasSetting(TVShows_Hide_Fanart)]</visible>
             </control>
             <control type="image">
                 <description>Default image if no fanart for seasons</description>
@@ -74,7 +74,7 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Seasons_Folder)]</texture>
-                <visible>!Player.HasVideo + [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Show_Fanart)]</visible>
+                <visible>!Player.HasVideo + [Container.Content(Seasons) + Skin.HasSetting(Seasons_Hide_Fanart)]</visible>
             </control>
             <control type="image">
                 <description>Default image if no fanart for episodes</description>
@@ -85,23 +85,11 @@
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Episodes_Folder)]</texture>
-                <visible>!Player.HasVideo + [Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_Fanart)]</visible>
+                <visible>!Player.HasVideo + [Container.Content(Episodes) + Skin.HasSetting(Episodes_Hide_Fanart)]</visible>
             </control>
-            <control type="group">
-                <visible>!Control.IsVisible(521) + !Control.IsVisible(509)</visible>
                 <include>Global_BackgroundDiffuser</include>
-            </control>
             <control type="group">
                 <visible>Control.IsVisible(521) | Control.IsVisible(509)</visible>
-                <control type="image"> <!-- fanart overlay -->
-                    <description>Fanart overlay</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>1280</width>
-                    <height>720</height>
-                    <texture background="true">white.png</texture>
-                    <colordiffuse>55000000</colordiffuse>
-                </control>
                 <include>Bottom_Part</include>
             </control>
             <control type="group">
