@@ -690,19 +690,19 @@
         <animation reversible="false" effect="zoom" center="auto" start="100" end="120" time="100">focus</animation>
     </include>
     <include name="Settings_Description_LabelTemplate">
-        <posx>-310</posx>
-        <posy>30</posy>
-        <width>290</width>
-        <height>60</height>
-        <aligny>center</aligny>
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>270</width>
+        <height>30</height>
         <font>Font_Normal_Bold_Caps_24</font>
         <wrapmultiline>true</wrapmultiline>
         <textcolor>white</textcolor>
+        <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
         <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
-        <animation effect="slide" start="0,0" end="0,380" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+        <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
         <animation effect="slide" start="0,0" end="950,0" time="0" condition="Container(9000).HasFocus(3)">conditional</animation>
         <animation effect="slide" start="0,0" end="950,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
-        <animation effect="slide" start="0,0" end="950,380" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
+        <animation effect="slide" start="0,0" end="950,365" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
     </include>
     <include name="Skin_Settings_LabelTemplate">
         <width>750</width>
@@ -717,9 +717,9 @@
         <width>750</width>
         <height>40</height>
         <font>Font_Normal_20</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>ff00b8f5</focusedcolor>
-        <texturefocus>-</texturefocus>
+        <textcolor>88ffffff</textcolor>
+        <focusedcolor>white</focusedcolor>
+        <texturefocus>mjew/settings_category_background.png</texturefocus>
         <texturenofocus>-</texturenofocus>
      </include>
     <include name="Skin_Settings_SingleImageButtonTemplate">
@@ -729,11 +729,11 @@
         <height>40</height>
         <label>31113</label>
         <font>Font_Normal_Bold_Caps_18</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>ff00b8f5</focusedcolor>
+        <textcolor>88ffffff</textcolor>
+        <focusedcolor>white</focusedcolor>
         <align>center</align>
         <texturenofocus>-</texturenofocus>
-        <texturefocus>-</texturefocus>
+        <texturefocus>mjew/settings_category_background.png</texturefocus>
         <onleft>302</onleft>
         <onright>301</onright>
         <onup>304</onup>
@@ -746,11 +746,11 @@
         <height>40</height>
         <label>31114</label>
         <font>Font_Normal_Bold_Caps_18</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>ff00b8f5</focusedcolor>
+        <textcolor>88ffffff</textcolor>
+        <focusedcolor>white</focusedcolor>
         <align>center</align>
         <texturenofocus>-</texturenofocus>
-        <texturefocus>-</texturefocus>
+        <texturefocus>mjew/settings_category_background.png</texturefocus>
         <onleft>300</onleft>
         <onright>302</onright>
         <onup>304</onup>
@@ -763,11 +763,11 @@
         <height>40</height>
         <label>571</label>
         <font>Font_Normal_Bold_Caps_18</font>
-        <textcolor>white</textcolor>
-        <focusedcolor>ff00b8f5</focusedcolor>
+        <textcolor>88ffffff</textcolor>
+        <focusedcolor>white</focusedcolor>
         <align>center</align>
         <texturenofocus>-</texturenofocus>
-        <texturefocus>-</texturefocus>
+        <texturefocus>mjew/settings_category_background.png</texturefocus>
         <onleft>301</onleft>
         <onright>300</onright>
         <onup>304</onup>

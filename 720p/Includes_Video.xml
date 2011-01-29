@@ -17,7 +17,7 @@
                     <label>$INFO[Container(Movies).NumItems,, $LOCALIZE[31370]]</label>
                 </control>
                 <control type="fadelabel">
-                    <description>Watched / unwatched movies count</description>
+                    <description>Watched / unwatched movies count and sort mode</description>
                     <posx>0</posx>
                     <posy>30</posy>
                     <width>250</width>
@@ -28,6 +28,7 @@
                     <pauseatend>5000</pauseatend>
                     <label>$INFO[Window(Home).Property(Movies.Watched),, $LOCALIZE[31332]]</label>
                     <label>$INFO[Window(Home).Property(Movies.UnWatched),, $LOCALIZE[31333]]</label>
+                    <label>$INFO[Container.SortMethod,$LOCALIZE[581]: ]</label>
                 </control>
             </control>
             <control type="group">

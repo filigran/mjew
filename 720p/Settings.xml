@@ -4,15 +4,7 @@
     <controls>
         <include>CommonSettingsBackground</include>
         <include>CommonMediaPlayingBackground</include>
-        <control type="image">
-            <description>Fanart overlay</description>
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>1280</width>
-            <height>720</height>
-            <texture background="true">white.png</texture>
-            <colordiffuse>55000000</colordiffuse>
-        </control>
+        <include>Global_BackgroundDiffuser</include>
         <include>Bottom_Part</include>
         <control type="group">
             <posx>335</posx>
@@ -171,77 +163,129 @@
                     </item>
                 </content>
             </control>
-            <control type="label">
-                <description>Appearance description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31428</label>
-                <visible>Container(9000).HasFocus(1)</visible>
-            </control>
-            <control type="label">
-                <description>Video description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31429</label>
-                <visible>Container(9000).HasFocus(2)</visible>
-            </control>
-            <control type="label">
-                <description>Music description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31430</label>
-                <visible>Container(9000).HasFocus(3)</visible>
-            </control>
-            <control type="label">
-                <description>Pictures description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31431</label>
-                <visible>Container(9000).HasFocus(4)</visible>
-            </control>
-            <control type="label">
-                <description>Weather description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31432</label>
-                <visible>Container(9000).HasFocus(5)</visible>
-            </control>
-            <control type="label">
-                <description>Addons description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31433</label>
-                <visible>Container(9000).HasFocus(6)</visible>
-            </control>
-            <control type="label">
-                <description>Network description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31434</label>
-                <visible>Container(9000).HasFocus(7)</visible>
-            </control>
-            <control type="label">
-                <description>System description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31435</label>
-                <visible>Container(9000).HasFocus(8)</visible>
-            </control>
-            <control type="label">
-                <description>Skin description label</description>
-                <include>Settings_Description_LabelTemplate</include>
-                <label>31436</label>
-                <visible>Container(9000).HasFocus(9)</visible>
-            </control>
-            <control type="textbox">
-                <description>Category description</description>
-                <posx>-310</posx>
-                <posy>80</posy>
-                <width>290</width>
-                <height>100</height>
-                <font>Font_Tahoma_20</font>
-                <label>$INFO[Container(9000).ListItem.Label2]</label>
-                <align>left</align>
-                <textcolor>white</textcolor>
-                <shadowcolor>black</shadowcolor>
-                <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
-                <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
-                <animation effect="slide" start="0,0" end="0,380" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
-                <animation effect="slide" start="0,0" end="950,0" time="0" condition="Container(9000).HasFocus(3)">conditional</animation>
-                <animation effect="slide" start="0,0" end="950,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
-                <animation effect="slide" start="0,0" end="950,380" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
+            <control type="group">
+                <posx>-300</posx>
+                <posy>50</posy>
+                <control type="image">
+                    <description>Settings box left side background</description>
+                    <posx>-34</posx>
+                    <posy>-30</posy>
+                    <width>338</width>
+                    <height>190</height>
+                    <texture flipx="true" border="10" background="true">mjew/settings_box.png</texture>
+                    <colordiffuse>aa000000</colordiffuse>
+                    <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+                    <visible>!Container(9000).HasFocus(3) + !Container(9000).HasFocus(6) + !Container(9000).HasFocus(9)</visible>
+                </control>
+                <control type="image">
+                    <description>Settings box left side glow</description>
+                    <posx>-34</posx>
+                    <posy>-30</posy>
+                    <width>338</width>
+                    <height>190</height>
+                    <texture flipx="true" border="10" background="true">mjew/settings_box_glow.png</texture>
+                    <colordiffuse>white</colordiffuse>
+                    <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+                    <visible>!Container(9000).HasFocus(3) + !Container(9000).HasFocus(6) + !Container(9000).HasFocus(9)</visible>
+                </control>
+                <control type="image">
+                    <description>Settings box right side background</description>
+                    <posx>906</posx>
+                    <posy>-30</posy>
+                    <width>338</width>
+                    <height>190</height>
+                    <texture border="10" background="true">mjew/settings_box.png</texture>
+                    <colordiffuse>aa000000</colordiffuse>
+                    <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
+                    <visible>Container(9000).HasFocus(3) | Container(9000).HasFocus(6) | Container(9000).HasFocus(9)</visible>
+                </control>
+                <control type="image">
+                    <description>Settings box right side glow</description>
+                    <posx>906</posx>
+                    <posy>-30</posy>
+                    <width>338</width>
+                    <height>190</height>
+                    <texture border="10" background="true">mjew/settings_box_glow.png</texture>
+                    <colordiffuse>white</colordiffuse>
+                    <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
+                    <visible>Container(9000).HasFocus(3) | Container(9000).HasFocus(6) | Container(9000).HasFocus(9)</visible>
+                </control>
+                <control type="label">
+                    <description>Appearance description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31428</label>
+                    <visible>Container(9000).HasFocus(1)</visible>
+                </control>
+                <control type="label">
+                    <description>Video description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31429</label>
+                    <visible>Container(9000).HasFocus(2)</visible>
+                </control>
+                <control type="label">
+                    <description>Music description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31430</label>
+                    <visible>Container(9000).HasFocus(3)</visible>
+                </control>
+                <control type="label">
+                    <description>Pictures description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31431</label>
+                    <visible>Container(9000).HasFocus(4)</visible>
+                </control>
+                <control type="label">
+                    <description>Weather description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31432</label>
+                    <visible>Container(9000).HasFocus(5)</visible>
+                </control>
+                <control type="label">
+                    <description>Addons description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31433</label>
+                    <visible>Container(9000).HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <description>Network description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31434</label>
+                    <visible>Container(9000).HasFocus(7)</visible>
+                </control>
+                <control type="label">
+                    <description>System description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31435</label>
+                    <visible>Container(9000).HasFocus(8)</visible>
+                </control>
+                <control type="label">
+                    <description>Skin description label</description>
+                    <include>Settings_Description_LabelTemplate</include>
+                    <label>31436</label>
+                    <visible>Container(9000).HasFocus(9)</visible>
+                </control>
+                <control type="textbox">
+                    <description>Category description</description>
+                    <posx>0</posx>
+                    <posy>30</posy>
+                    <width>270</width>
+                    <height>100</height>
+                    <font>Font_Tahoma_20</font>
+                    <label>$INFO[Container(9000).ListItem.Label2]</label>
+                    <align>left</align>
+                    <textcolor>white</textcolor>
+                    <shadowcolor>black</shadowcolor>
+                    <autoscroll time="2000" delay="2000" repeat="2000">true</autoscroll>
+                    <animation effect="slide" start="0,0" end="0,190" time="0" condition="Container(9000).HasFocus(4) | Container(9000).HasFocus(5)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="0,365" time="0" condition="Container(9000).HasFocus(7) | Container(9000).HasFocus(8)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="950,0" time="0" condition="Container(9000).HasFocus(3)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="950,190" time="0" condition="Container(9000).HasFocus(6)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="950,365" time="0" condition="Container(9000).HasFocus(9)">conditional</animation>
+                </control>
             </control>
         </control>
         <include>Global_DialogDiffuser</include>

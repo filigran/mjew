@@ -30,22 +30,32 @@
         <include>Global_BackgroundDiffuser</include>
         <include>Bottom_Part</include>
         <control type="group">
-            <posx>80</posx>
-            <posy>50</posy>
-            <animation type="WindowOpen" reversible="false">
-                <effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
-                <effect type="fade" start="0" end="100" time="300" />
-            </animation>
-            <animation type="WindowClose" reversible="false">
-                <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-                <effect type="fade" start="100" end="0" time="300" />
-            </animation>
-            <control type="grouplist" id="3">
-                <description>button area</description>
+            <posx>75</posx>
+            <posy>80</posy>
+            <control type="image">
+                <description>Settings background</description>
                 <posx>0</posx>
-                <posy>60</posy>
+                <posy>0</posy>
+                <width>1130</width>
+                <height>570</height>
+                <texture border="10" background="true">mjew/home_menu_background.png</texture>
+                <colordiffuse>aa000000</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Settings background reflection</description>
+                <posx>0</posx>
+                <posy>570</posy>
+                <width>1130</width>
+                <height>70</height>
+                <texture flipy="true" diffuse="mjew/home_menu_reflection.png" border="10" background="true">mjew/home_menu_background.png</texture>
+                <colordiffuse>88000000</colordiffuse>
+            </control>
+            <control type="grouplist" id="3">
+                <description>header area</description>
+                <posx>20</posx>
+                <posy>20</posy>
                 <width>320</width>
-                <height>481</height>
+                <height>530</height>
                 <onleft>60</onleft>
                 <onright>5</onright>
                 <onup>3</onup>
@@ -53,8 +63,8 @@
             </control>
             <control type="grouplist" id="5">
                 <description>control area</description>
-                <posx>350</posx>
-                <posy>70</posy>
+                <posx>360</posx>
+                <posy>20</posy>
                 <width>750</width>
                 <height>530</height>
                 <itemgap>-1</itemgap>
@@ -80,21 +90,19 @@
                 <orientation>vertical</orientation>
             </control>
         </control>
-        <!--<include>BehindDialogFadeOut</include>-->
         <control type="button" id="10">
             <description>Default Category Button</description>
             <height>50</height>
-            <width>370</width>
+            <width>350</width>
             <textoffsetx>50</textoffsetx>
             <align>right</align>
             <aligny>center</aligny>
             <font>Font_Normal_Bold_Caps_24</font>
-            <textcolor>white</textcolor>
-            <shadowcolor>black</shadowcolor>
-            <focusedcolor>ff00b8f5</focusedcolor>
-            <texturefocus>-</texturefocus>
+            <textcolor>88ffffff</textcolor>
+            <focusedcolor>white</focusedcolor>
+            <texturefocus>mjew/settings_category_background.png</texturefocus>
             <texturenofocus>-</texturenofocus>
-            <pulseonselect>false</pulseonselect>
+            <pulseonselect>true</pulseonselect>
         </control>
         <control type="button" id="7">
             <description>Default Button</description>
@@ -102,9 +110,9 @@
             <posy>0</posy>
             <height>40</height>
             <font>Font_Normal_20</font>
-            <textcolor>white</textcolor>
-            <focusedcolor>ff00b8f5</focusedcolor>
-            <texturefocus>-</texturefocus>
+            <textcolor>88ffffff</textcolor>
+            <focusedcolor>white</focusedcolor>
+            <texturefocus>mjew/settings_category_background.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="radiobutton" id="8">
@@ -113,9 +121,9 @@
             <posy>0</posy>
             <height>40</height>
             <font>Font_Normal_20</font>
-            <textcolor>white</textcolor>
-            <focusedcolor>ff00b8f5</focusedcolor>
-            <texturefocus>-</texturefocus>
+            <textcolor>88ffffff</textcolor>
+            <focusedcolor>white</focusedcolor>
+            <texturefocus>mjew/settings_category_background.png</texturefocus>
             <texturenofocus>-</texturenofocus>
         </control>
         <control type="spincontrolex" id="9">
@@ -124,9 +132,9 @@
             <posy>0</posy>
             <height>40</height>
             <font>font13</font>
-            <textcolor>white</textcolor>
-            <focusedcolor>ff00b8f5</focusedcolor>
-            <texturefocus>-</texturefocus>
+            <textcolor>88ffffff</textcolor>
+            <focusedcolor>white</focusedcolor>
+            <texturefocus>mjew/settings_category_background.png</texturefocus>
             <texturenofocus>-</texturenofocus>
             <aligny>center</aligny>
             <reverse>yes</reverse>

@@ -21,18 +21,57 @@
                     <width>116</width>
                     <height>176</height>
                     <texture background="true" diffuse="special://skin/media/postermatte.png">$INFO[ListItem.Icon]</texture>
-                    <colordiffuse>99ffffff</colordiffuse>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
                 </control>
                 <control type="image">
                     <posx>0</posx>
-                    <posy>216</posy>
+                    <posy>44</posy>
                     <width>116</width>
                     <height>176</height>
-                    <texture flipy="true" background="true" diffuse="mjew/poster_reflection.png">$INFO[ListItem.Icon]</texture>
-                    <colordiffuse>99ffffff</colordiffuse>
+                    <texture background="true" diffuse="special://skin/media/postermatte.png">mjew/black.png</texture>
+                    <colordiffuse>80ffffff</colordiffuse>
                     <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>44</posy>
+                    <width>116</width>
+                    <height>176</height>
+                    <texture background="true">mjew/settings_frame.png</texture>
+                    <colordiffuse>20ffffff</colordiffuse>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>44</posy>
+                    <width>116</width>
+                    <height>176</height>
+                    <texture background="true">mjew/settings_gloss.png</texture>
+                    <colordiffuse>20ffffff</colordiffuse>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>220</posy>
+                    <width>116</width>
+                    <height>50</height>
+                    <texture flipy="true" background="true" diffuse="mjew/home_menu_reflection.png">$INFO[ListItem.Icon]</texture>
+                    <colordiffuse>99ffffff</colordiffuse>
+                    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+                    <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>220</posy>
+                    <width>116</width>
+                    <height>50</height>
+                    <texture background="true" flipy="true" diffuse="mjew/home_menu_reflection.png">mjew/black.png</texture>
+                    <colordiffuse>80ffffff</colordiffuse>
+                    <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                     <visible>SubString(ListItem.Path,trailer) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Movies) + !Skin.HasSetting(Movies_Show_Cover_Overlays)]</visible>
                 </control>
                 <control type="group" id="9999">
@@ -200,6 +239,17 @@
                         <posy>0</posy>
                         <width>170</width>
                         <height>253</height>
+                        <texture background="true">mjew/settings_gloss.png</texture>
+                        <colordiffuse>20ffffff</colordiffuse>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
+                        <animation tween="back" reversible="false" effect="zoom" center="85,150" start="100" end="72" time="400" condition="Window.IsVisible(MovieInformation) | Control.IsVisible(60) | ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">conditional</animation>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>170</width>
+                        <height>253</height>
                         <texture>poster_frame.png</texture>
                         <colordiffuse>ff498999</colordiffuse>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
@@ -211,9 +261,9 @@
                         <posx>0</posx>
                         <posy>253</posy>
                         <width>170</width>
-                        <height>253</height>
+                        <height>150</height>
                         <texture flipy="true" diffuse="mjew/poster_reflection.png" background="true">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
                         <animation tween="back" reversible="false" effect="zoom" center="100,222,167,226" start="60" end="100" time="400">focus</animation>
                         <animation tween="back" reversible="false" effect="zoom" center="85,150" start="100" end="72" time="400" condition="Control.IsVisible(60) | ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus">conditional</animation>
                     </control>
