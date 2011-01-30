@@ -94,7 +94,7 @@
                     <aligny>center</aligny>
                     <texture>special://skin/media/white.png</texture>
                     <colordiffuse>5500b8f5</colordiffuse>
-                    <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                    <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                 </control>
                 <control type="image">
                     <description>Right border image for episodes watched overlay</description>
@@ -106,7 +106,7 @@
                     <aligny>center</aligny>
                     <texture>special://skin/media/white.png</texture>
                     <colordiffuse>5500b8f5</colordiffuse>
-                    <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                    <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                 </control>
             </control>
             <control type="list" id="519">
@@ -226,7 +226,7 @@
                         <aligny>center</aligny>
                         <texture>special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                        <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                     </control>
                     <control type="image">
                         <posx>800</posx>
@@ -237,7 +237,7 @@
                         <aligny>center</aligny>
                         <texture>special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)</visible>
+                        <visible>Container.Content(Movies) + !Skin.HasSetting(Movies_Hide_Watched_Overlay)</visible>
                     </control>
                     <control type="image">
                         <posx>920</posx>
@@ -248,7 +248,7 @@
                         <aligny>center</aligny>
                         <texture>special://skin/media/$INFO[Listitem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
+                        <visible>[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Hide_Watched_Overlay)]</visible>
                     </control>
                     <control type="label">
                         <posx>960</posx>
@@ -425,7 +425,7 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                        <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                     </control>
                     <control type="image">
                         <posx>800</posx>
@@ -438,7 +438,7 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>Container.Content(Movies) + Skin.HasSetting(Movies_Show_Watched_Overlay)</visible>
+                        <visible>Container.Content(Movies) + !Skin.HasSetting(Movies_Hide_Watched_Overlay)</visible>
                     </control>
                     <control type="image">
                         <posx>920</posx>
@@ -451,7 +451,7 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
+                        <visible>[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Hide_Watched_Overlay)]</visible>
                     </control>
                     <control type="label">
                         <posx>960</posx>

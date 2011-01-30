@@ -103,7 +103,7 @@
                         <aspectratio>stretch</aspectratio>
                         <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>ff00ff00</colordiffuse>
-                        <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                        <visible>!Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout width="633" height="164">
@@ -149,7 +149,7 @@
                         <colordiffuse>ff00ff00</colordiffuse>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400" condition="Control.HasFocus(60) | Control.HasFocus(600) | ControlGroup(9000).HasFocus">conditional</animation>
                         <animation tween="back" reversible="false" effect="zoom" center="auto" start="60" end="100" time="400">focus</animation>
-                        <visible>Skin.HasSetting(Episodes_Show_Watched_Overlay)</visible>
+                        <visible>!Skin.HasSetting(Episodes_Hide_Watched_Overlay)</visible>
                     </control>
                     <control type="label">
                         <posx>292</posx>

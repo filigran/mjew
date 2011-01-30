@@ -42,7 +42,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>8800ff00</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                 </control>
                 <control type="image">
                     <posx>205</posx>
@@ -52,7 +52,7 @@
                     <aspectratio>stretch</aspectratio>
                     <colordiffuse>8800ff00</colordiffuse>
                     <texture flipy="true" diffuse="mjew/poster_reflection.png" background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                 </control>
             </control>
         </itemlayout>
@@ -203,7 +203,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>lime</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                     <animation tween="back" reversible="false" effect="zoom" center="120,30" start="80" end="120" time="400">focus</animation>
                 </control>
                 <control type="image">
@@ -215,7 +215,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture flipy="true" diffuse="mjew/poster_reflection.png" background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>lime</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                     <animation tween="back" reversible="false" effect="zoom" center="120,100" start="80" end="120" time="400">focus</animation>
                 </control>
             </control>

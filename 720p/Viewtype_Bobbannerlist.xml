@@ -91,7 +91,7 @@
                         <aligny>center</aligny>
                         <texture>special://skin/media/$INFO[ListItem.Overlay]</texture>
                         <colordiffuse>lime</colordiffuse>
-                        <visible>[Container.Content(TVShows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
+                        <visible>[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Hide_Watched_Overlay)]</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="30">
@@ -144,7 +144,7 @@
                         <colordiffuse>lime</colordiffuse>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnNext">Focus</animation>
                         <animation effect="fade" start="0" end="100" delay="50" time="200" reversible="false" condition="Container.OnPrevious">Focus</animation>
-                        <visible>[Container.Content(TVshows) + Skin.HasSetting(TVShows_Show_Watched_Overlay)] | [Container.Content(Seasons) + Skin.HasSetting(Seasons_Show_Watched_Overlay)]</visible>
+                        <visible>[Container.Content(TVshows) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)] | [Container.Content(Seasons) + !Skin.HasSetting(Seasons_Hide_Watched_Overlay)]</visible>
                     </control>
                 </focusedlayout>
             </control>

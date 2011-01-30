@@ -320,42 +320,6 @@
                     <ondown>9001</ondown>
                     <onup>9001</onup>
                     <itemgap>0</itemgap>
-                    <!--<control type="radiobutton" id="100">
-                        <description>Toggle fanart movies</description>
-                        <label>20445</label>
-                        <onclick>Skin.ToggleSetting(Movies_Show_Fanart)</onclick>
-                        <visible>Container.Content(Movies)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Movies_Show_Fanart)</selected>
-                    </control>
-                    <control type="radiobutton" id="102">
-                        <description>Toggle fanart tvshows</description>
-                        <label>20445</label>
-                        <onclick>Skin.ToggleSetting(TVShows_Show_Fanart)</onclick>
-                        <visible>Container.Content(TVShows)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(TVShows_Show_Fanart)</selected>
-                    </control>
-                    <control type="radiobutton" id="104">
-                        <description>Toggle fanart seasons</description>
-                        <label>20445</label>
-                        <onclick>Skin.ToggleSetting(Seasons_Show_Fanart)</onclick>
-                        <visible>Container.Content(Seasons)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Seasons_Show_Fanart)</selected>
-                    </control>
-                    <control type="radiobutton" id="106">
-                        <description>Toggle fanart episodes</description>
-                        <label>20445</label>
-                        <onclick>Skin.ToggleSetting(Episodes_Show_Fanart)</onclick>
-                        <visible>Container.Content(Episodes)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Episodes_Show_Fanart)</selected>
-                    </control>-->
                     <control type="radiobutton" id="101">
                         <description>Toggle small fanart movies</description>
                         <label>31386</label>
@@ -419,87 +383,6 @@
                         <include>VideoLibrary_Menu_RadioButtonTemplate</include>
                         <selected>Skin.HasSetting(Episodes_Show_Rating)</selected>
                     </control>
-                    <!--<control type="radiobutton" id="112">
-                        <description>Toggle centered/bottom logos</description>
-                        <label>31388</label>
-                        <onclick>Skin.ToggleSetting(TVShows_Logos_centered)</onclick>
-                        <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Container.Content(TVShows)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(TVShows_Logos_Centered)</selected>
-                    </control>
-                    <control type="radiobutton" id="113">
-                        <description>Toggle centered/bottom posters movies</description>
-                        <label>31389</label>
-                        <onclick>Skin.ToggleSetting(Movies_Posters_Bottom)</onclick>
-                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>!Skin.HasSetting(Movies_Posters_Bottom)</selected>
-                    </control>
-                    <control type="radiobutton" id="114">
-                        <description>Toggle centered/bottom posters seasons</description>
-                        <label>31389</label>
-                        <onclick>Skin.ToggleSetting(Seasons_Posters_Bottom)</onclick>
-                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Seasons)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>!Skin.HasSetting(Seasons_Posters_Bottom)</selected>
-                    </control>
-                    <control type="radiobutton" id="120">
-                        <description>Toggle centered/bottom posters tvshows</description>
-                        <label>31389</label>
-                        <onclick>Skin.ToggleSetting(TVShows_Posters_Bottom)</onclick>
-                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(TVShows)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>!Skin.HasSetting(TVShows_Posters_Bottom)</selected>
-                    </control>
-                    <control type="radiobutton" id="115">
-                        <description>Toggle centered/bottom thumbs episodes</description>
-                        <label>31391</label>
-                        <onclick>Skin.ToggleSetting(Episodes_Thumbs_Bottom)</onclick>
-                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Episodes)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>!Skin.HasSetting(Episodes_Thumbs_Bottom)</selected>
-                    </control>-->
-                    <!--<control type="radiobutton" id="116">
-                        <description>Toggle watched overlay movies</description>
-                        <label>31387</label>
-                        <onclick>Skin.ToggleSetting(Movies_Show_Watched_Overlay)</onclick>
-                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Movies)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Movies_Show_Watched_Overlay)</selected>
-                    </control>
-                    <control type="radiobutton" id="117">
-                        <description>Toggle watched overlay tvshows</description>
-                        <label>31387</label>
-                        <onclick>Skin.ToggleSetting(TVShows_Show_Watched_Overlay)</onclick>
-                        <visible>Container.Content(TVShows)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(TVShows_Show_Watched_Overlay)</selected>
-                    </control>
-                    <control type="radiobutton" id="118">
-                        <description>Toggle watched overlay episodes</description>
-                        <label>31387</label>
-                        <onclick>Skin.ToggleSetting(Episodes_Show_Watched_Overlay)</onclick>
-                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(515)] + Container.Content(Episodes)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Episodes_Show_Watched_Overlay)</selected>
-                    </control>
-                    <control type="radiobutton" id="119">
-                        <description>Toggle watched overlay seasons</description>
-                        <label>31387</label>
-                        <onclick>Skin.ToggleSetting(Seasons_Show_Watched_Overlay)</onclick>
-                        <visible>[Control.IsVisible(50) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(501)] + Container.Content(Seasons)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Seasons_Show_Watched_Overlay)</selected>
-                    </control>-->
                     <control type="radiobutton" id="121">
                         <description>Toggle studio flag tvshows</description>
                         <label>31399</label>
@@ -535,16 +418,7 @@
                         <include>VideoLibrary_Menu_CommonTemplate</include>
                         <include>VideoLibrary_Menu_RadioButtonTemplate</include>
                         <selected>Skin.HasSetting(Episodes_Show_Info)</selected>
-                    </control><!--
-                    <control type="radiobutton" id="128">
-                        <description>Toggle auto info movies</description>
-                        <label>31413 auto</label>
-                        <onclick>Skin.ToggleSetting(Movies_Show_Info_Auto)</onclick>
-                        <visible>[Control.IsVisible(520) | Control.IsVisible(521)] + Container.Content(Movies)</visible>
-                        <include>VideoLibrary_Menu_CommonTemplate</include>
-                        <include>VideoLibrary_Menu_RadioButtonTemplate</include>
-                        <selected>Skin.HasSetting(Movies_Show_Info_Auto)</selected>
-                    </control>-->
+                    </control>
                     <control type="radiobutton" id="124">
                         <description>Toggle media flags movies</description>
                         <label>31414</label>
