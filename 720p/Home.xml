@@ -123,6 +123,7 @@
             <texture background="true">white.png</texture>
             <colordiffuse>55000000</colordiffuse>
         </control>
+        <include condition="Skin.HasSetting(Qlock)">QlockHome</include>
         <include>Bottom_Part</include>
         <control type="group">
             <description>Home Menu</description>

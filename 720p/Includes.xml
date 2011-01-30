@@ -4,6 +4,7 @@
     <include file="Includes_NowPlaying.xml" />
     <include file="Includes_LeftMenu.xml" />
     <include file="Includes_Video.xml" />
+    <include file="Includes_Qlock.xml" />
     <!-- SLUT MJEW -->
     <include file="defaults.xml" />
     <include file="ViewsVideoLibrary.xml" />

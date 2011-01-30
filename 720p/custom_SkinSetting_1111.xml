@@ -308,6 +308,12 @@
                                 <onclick>Skin.ToggleSetting(Home_Show_WeatherInfo)</onclick>
                                 <selected>Skin.HasSetting(Home_Show_WeatherInfo)</selected>
                             </control>
+                            <control type="radiobutton" id="221">
+                                <label>31212</label>
+                                <onclick>Skin.ToggleSetting(Qlock)</onclick>
+                                <onclick>RunScript(script.qlock,-startup)</onclick>
+                                <selected>Skin.HasSetting(Qlock)</selected>
+                            </control>
                             <control type="label" id="206">
                                 <description>Hide categories header</description>
                                 <include>Skin_Settings_LabelTemplate</include>
