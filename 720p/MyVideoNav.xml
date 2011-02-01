@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">5043</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,519,520,521,522,501,502,508,509,503,512,513,514,515,517,518</views>
+    <views>50,519,520,521,522,501,502,508,509,503,512,513,514,515,517,518,550</views>
     <controls>
         <control type="button" id="5043">
             <description>Run Recently added</description>
@@ -89,7 +89,7 @@
             </control>
                 <include>Global_BackgroundDiffuser</include>
             <control type="group">
-                <visible>Control.IsVisible(521) | Control.IsVisible(509)</visible>
+                <visible>Control.IsVisible(521) | Control.IsVisible(509) | Control.IsVisible(550)</visible>
                 <include>Bottom_Part</include>
             </control>
             <control type="group">
@@ -104,6 +104,7 @@
                 <include>Viewtype_Logo</include> <!-- view id = 508 -->
                 <include>Viewtype_Episode</include> <!-- view id = 503 -->
                 <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
+                <include>Viewtype_EpisodeList2</include> <!-- view id = 550 -->
                 <include>Viewtype_LauncherWide</include> <!-- view id = 517 -->
                 <include>Viewtype_LauncherTall</include> <!-- view id = 518 -->
             </control>

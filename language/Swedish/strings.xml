@@ -128,7 +128,7 @@
   <string id="31390">Växla till biblioteksläge</string>
   <string id="31360">Använd scrollbar</string>
   <string id="31361">Ladda hem logo.png och clearart.png till alla TV-serier</string>
-  <string id="31362">Visa clearart i episodinformation när video spelas</string>
+  <string id="31362">Visa clearart i OSD när video spelas</string>
   <string id="31363">Visa RSS-nyheter i alla fönster</string>
   <string id="31364">Filminformation</string>
   <string id="31365">Avsnittsinformation</string>
@@ -188,6 +188,7 @@
   <string id="31439">Timer satt: Systemet kommer att stängas av om</string>
   <string id="31440">Nästa avsnitt</string>
   <string id="31441">Dölj visad-indikator</string>
+  <string id="31442">Visa cover i OSD när video spelas</string>
 
   <string id="31428">Utseende</string>
   <string id="31429">Video</string>

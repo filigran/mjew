@@ -158,72 +158,98 @@
                                 <onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
                                 <selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
                             </control>
-                            <control type="radiobutton" id="112">
+                            <control type="radiobutton" id="103">
                                 <description>Play trailers windowed</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31104</label>
                                 <onclick>Skin.ToggleSetting(WindowedTrailer)</onclick>
                                 <selected>Skin.HasSetting(WindowedTrailer)</selected>
                             </control>
-                            <control type="radiobutton" id="115">
+                            <control type="radiobutton" id="104">
                                 <description>Show RSS everywhere</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31363</label>
                                 <onclick>Skin.ToggleSetting(Show_RSS_Everywhere)</onclick>
                                 <selected>Skin.HasSetting(Show_RSS_Everywhere)</selected>
                             </control>
-                            <control type="label" id="104">
+                            <control type="label" id="105">
+                                <description>Movies header</description>
+                                <include>Skin_Settings_LabelTemplate</include>
+                                <label>342</label>
+                            </control>
+                            <control type="radiobutton" id="106">
+                                <description>Fanart</description>
+                                <include>Skin_Settings_RadiobuttonTemplate</include>
+                                <label>31307</label>
+                                <onclick>Skin.ToggleSetting(Movies_Hide_Fanart)</onclick>
+                                <selected>Skin.HasSetting(Movies_Hide_Fanart)</selected>
+                            </control>
+                            <control type="radiobutton" id="107">
+                                <description>Watched overlay</description>
+                                <include>Skin_Settings_RadiobuttonTemplate</include>
+                                <label>31441</label>
+                                <onclick>Skin.ToggleSetting(Movies_Hide_Watched_Overlay)</onclick>
+                                <selected>Skin.HasSetting(Movies_Hide_Watched_Overlay)</selected>
+                            </control>
+                            <control type="radiobutton" id="108">
+                                <description>Cover in video osd</description>
+                                <include>Skin_Settings_RadiobuttonTemplate</include>
+                                <label>31442</label>
+                                <onclick>Skin.ToggleSetting(Movies_Show_Seekbar_Cover)</onclick>
+                                <selected>Skin.HasSetting(Movies_Show_Seekbar_Cover)</selected>
+                            </control>
+                            <control type="label" id="109">
                                 <description>TV Shows header</description>
                                 <include>Skin_Settings_LabelTemplate</include>
                                 <label>20343</label>
                             </control>
-                            <control type="radiobutton" id="105">
+                            <control type="radiobutton" id="110">
                                 <description>Posters instead of banners</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31123</label>
                                 <onclick>Skin.ToggleSetting(TVShows_Use_Posters)</onclick>
                                 <selected>Skin.HasSetting(TVShows_Use_Posters)</selected>
                             </control>
-                            <control type="radiobutton" id="116">
+                            <control type="radiobutton" id="111">
                                 <description>Clearart in video osd</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31362</label>
                                 <onclick>Skin.ToggleSetting(Episodes_Show_Clearart)</onclick>
                                 <selected>Skin.HasSetting(Episodes_Show_Clearart)</selected>
                             </control>
-                            <control type="button" id="114">
+                            <control type="button" id="112">
                                 <description>Logo and clearart download</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31361</label>
                                 <onclick>XBMC.RunScript(script.logo-downloader,mode=bulk,clearart=True,logo=True,showthumb=False)</onclick>
                             </control>
-                            <control type="radiobutton" id="117">
+                            <control type="radiobutton" id="113">
                                 <description>Fanart</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31307</label>
                                 <onclick>Skin.ToggleSetting(TVShows_Hide_Fanart)</onclick>
                                 <selected>Skin.HasSetting(TVShows_Hide_Fanart)</selected>
                             </control>
-                            <control type="radiobutton" id="118">
+                            <control type="radiobutton" id="114">
                                 <description>Watched overlay</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31441</label>
                                 <onclick>Skin.ToggleSetting(TVShows_Hide_Watched_Overlay)</onclick>
                                 <selected>Skin.HasSetting(TVShows_Hide_Watched_Overlay)</selected>
                             </control>
-                            <control type="label" id="106">
+                            <control type="label" id="115">
                                 <description>Start window header</description>
                                 <include>Skin_Settings_LabelTemplate</include>
                                 <label>512</label>
                             </control>
-                            <control type="radiobutton" id="107">
+                            <control type="radiobutton" id="116">
                                 <description>Startup playlist</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>21398</label>
                                 <onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
                                 <selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
                             </control>
-                            <control type="button" id="108">
+                            <control type="button" id="117">
                                 <description>Startup Playlist Path</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>15311</label>
@@ -231,19 +257,19 @@
                                 <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u,t:\playlists\music\)</onclick>
                                 <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
                             </control>
-                            <control type="label" id="109">
+                            <control type="label" id="118">
                                 <description>Backgrounds</description>
                                 <include>Skin_Settings_LabelTemplate</include>
                                 <label>31102</label>
                             </control>
-                            <control type="radiobutton" id="110">
+                            <control type="radiobutton" id="119">
                                 <description>Show playing video instead of fanart</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31124</label>
                                 <onclick>Skin.ToggleSetting(Show_Video_Fanart)</onclick>
                                 <selected>Skin.HasSetting(Show_Video_Fanart)</selected>
                             </control>
-                            <control type="radiobutton" id="111">
+                            <control type="radiobutton" id="120">
                                 <description>Show visualization instead of fanart</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31125</label>

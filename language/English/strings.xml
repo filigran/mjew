@@ -168,7 +168,7 @@
   <string id="31390">Switch to Library mode</string>
   <string id="31360">Use Scrollbar</string>
   <string id="31361">Download logo.png and clearart.png for all TV-shows</string>
-  <string id="31362">Show clearart in episode info during video playback</string>
+  <string id="31362">Show clearart in OSD during video playback</string>
   <string id="31363">Show RSS in all windows</string>
   <string id="31364">Movie information</string>
   <string id="31365">Episode information</string>
@@ -227,4 +227,5 @@
   <string id="31439">Timer set: The system will shut down in</string>
   <string id="31440">Next episode</string>
   <string id="31441">Hide Watched Overlay</string>
+  <string id="31442">Show cover in OSD during video playback</string>
 </strings>

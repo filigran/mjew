@@ -2,38 +2,33 @@
     <defaultcontrol always="true">600</defaultcontrol>
     <coordinates>
         <system>1</system>
-        <posx>0</posx>
-        <posy>347</posy>
+        <posx>291</posx>
+        <posy>310</posy>
     </coordinates>
     <controls>
-        <control type="group" id="600">
-            <description>Scrollbar selector</description>
-            <posx>-2000</posx>
-            <control type="button">
-                <description>VideoPlayer content = episodes</description>
-                <visible>VideoPlayer.Content(Episodes)</visible>
-                <onfocus>SetFocus(601)</onfocus>
-            </control>
-            <control type="button">
-                <description>VideoPlayer content = movies</description>
-                <visible>VideoPlayer.Content(Movies)</visible>
-                <onfocus>SetFocus(602)</onfocus>
-            </control>
-        </control>
         <control type="group">
             <visible>Window.IsActive(fullscreenvideo) + !Window.IsActive(videoosd)</visible>
-            <animation effect="slide" start="0,497" end="0,0" time="300">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="0,497" time="300">WindowClose</animation>
-            <animation effect="slide" start="0,0" end="0,497" time="300">hidden</animation>
-            <animation effect="slide" start="0,497" end="0,0" time="300">visible</animation>
+            <animation reversible="false" effect="zoom" start="0" center="350,340" end="100" time="200">WindowOpen</animation>
+            <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+            <animation reversible="false" effect="zoom" start="0" center="350,340" end="100" time="200">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
             <control type="image">
                 <description>Background image if playing episodes or movies</description>
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>1280</width>
-                <height>273</height>
-                <texture>white.png</texture>
-                <colordiffuse>88000000</colordiffuse>
+                <width>697</width>
+                <height>322</height>
+                <texture>mjew/fsinfo_background.png</texture>
+                <colordiffuse>cc000000</colordiffuse>
+                <visible>VideoPlayer.Content(Episodes) | VideoPlayer.Content(Movies)</visible>
+            </control>
+            <control type="image">
+                <description>Background image glow if playing episodes or movies</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>697</width>
+                <height>322</height>
+                <texture>mjew/fsinfo_background_glow.png</texture>
                 <visible>VideoPlayer.Content(Episodes) | VideoPlayer.Content(Movies)</visible>
             </control>
             <control type="image">
@@ -46,177 +41,150 @@
                 <colordiffuse>88000000</colordiffuse>
                 <visible>!VideoPlayer.Content(Episodes) + !VideoPlayer.Content(Movies)</visible>
             </control>
-            <control type="image">
-                <description>Top border</description>
-                <posx>0</posx>
-                <posy>-3</posy>
-                <width>1280</width>
-                <height>3</height>
-                <texture>white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <animation effect="slide" start="0,-225" end="0,0" time="300" condition="Player.Paused">WindowOpen</animation>
-                <animation effect="slide" start="0,0" end="0,-225" time="300" condition="Player.Paused">WindowClose</animation>
-            </control>
             <control type="group">
-                <visible>VideoPlayer.Content(Episodes)</visible>
-                <description>Episode thumb + frame</description>
-                <posx>30</posx>
-                <posy>60</posy>
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>299</width>
-                    <height>168</height>
-                    <texture>special://skin/media/episodeframe.png</texture>
-                    <colordiffuse>ff00B8F5</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>3</posx>
-                    <posy>3</posy>
-                    <width>294</width>
-                    <height>163</height>
-                    <texture background="true" diffuse="episodematte.png">$INFO[VideoPlayer.Cover]</texture>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                </control>
-            </control>
-            <control type="group">
-                <posx>30</posx>
-                <posy>10</posy>
-                <description>Movie postr + frame</description>
-                <visible>VideoPlayer.Content(Movies)</visible>
-                <control type="image">
-                    <description>Poster frame</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>170</width>
-                    <height>253</height>
-                    <texture>special://skin/media/posterframe.png</texture>
-                    <colordiffuse>ff00B8F5</colordiffuse>
-                    <visible>VideoPlayer.Content(Movies)</visible>
-                </control>
-                <control type="image">
-                    <description>Poster</description>
-                    <posx>3</posx>
-                    <posy>3</posy>
-                    <width>164</width>
-                    <height>247</height>
-                    <texture background="true" diffuse="postermatte.png">$INFO[VideoPlayer.Cover]</texture>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <visible>VideoPlayer.Content(Movies)</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>360</posx>
-                <posy>20</posy>
-                <description>Episode title, plot and info</description>
-                <visible>VideoPlayer.Content(Episodes)</visible>
+                <posx>35</posx>
+                <posy>30</posy>
+                <description>Title, plot and info</description>
+                <visible>VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes)</visible>
                 <control type="label">
                     <description>Title</description>
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>880</width>
+                    <width>625</width>
                     <height>30</height>
                     <label>$INFO[VideoPlayer.Title]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Condensed_Bold_40</font>
+                    <font>Font_Condensed_Caps_30</font>
                     <textcolor>white</textcolor>
                 </control>
                 <control type="label">
-                    <description>Year, Series and episode number</description>
+                    <description>Movies: Year and genre</description>
                     <posx>0</posx>
                     <posy>35</posy>
-                    <width>880</width>
+                    <width>625</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.TVShowTitle] $INFO[VideoPlayer.Season,/ $LOCALIZE[20373]]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]$INFO[VideoPlayer.Premiered, / $LOCALIZE[20416] ]</label>
+                    <label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre, | ]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <font>Font_Tahoma_20</font>
+                    <font>Font_Condensed_Caps_20</font>
                     <textcolor>ff00b8f5</textcolor>
+                    <visible>VideoPlayer.Content(Movies)</visible>
+                </control>
+                <control type="label">
+                    <description>Episodes: Series name, episode number and premiere</description>
+                    <posx>0</posx>
+                    <posy>35</posy>
+                    <width>625</width>
+                    <height>30</height>
+                    <label>$INFO[VideoPlayer.TVShowTitle,[B],[/B]] $INFO[VideoPlayer.Season,| $LOCALIZE[20373] ]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]$INFO[VideoPlayer.Premiered, | $LOCALIZE[20416] ]</label>
+                    <scroll>true</scroll>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>Font_Condensed_Caps_20</font>
+                    <textcolor>ff00b8f5</textcolor>
+                    <visible>VideoPlayer.Content(Episodes)</visible>
                 </control>
                 <control type="textbox">
                     <description>Plot</description>
                     <posx>0</posx>
-                    <posy>70</posy>
-                    <width>570</width>
-                    <height>170</height>
+                    <posy>65</posy>
+                    <width>625</width>
+                    <height>155</height>
                     <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
                     <label>$INFO[VideoPlayer.Plot]</label>
-                    <pagecontrol>601</pagecontrol>
-                    <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Episodes_Autoscroll_plot)</autoscroll>
-                </control>
-                <control type="scrollbar" id="601">
-                    <description>Plot scrollbar</description>
-                    <posx>580</posx>
-                    <posy>70</posy>
-                    <width>26</width>
-                    <height>170</height>
-                    <texturesliderbackground>scrollbar_vertical_background.png</texturesliderbackground>
-                    <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
-                    <showonepage>true</showonepage>
-                    <orientation>vertical</orientation>
-                    <visible allowhiddenfocus="true">VideoPlayer.Content(Episodes) + Control.HasFocus(601)</visible>
-                </control>
-            </control>
-            <control type="group">
-                <posx>230</posx>
-                <posy>20</posy>
-                <description>Movie title, plot and info</description>
-                <visible>VideoPlayer.Content(Movies)</visible>
-                <control type="label">
-                    <description>Title</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>880</width>
-                    <height>30</height>
-                    <label>$INFO[VideoPlayer.Title]</label>
-                    <scroll>true</scroll>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>Font_Condensed_Bold_40</font>
-                    <textcolor>white</textcolor>
-                </control>
-                <control type="label">
-                    <description>Year</description>
-                    <posx>0</posx>
-                    <posy>35</posy>
-                    <width>880</width>
-                    <height>30</height>
-                    <label>$INFO[VideoPlayer.Year]</label>
-                    <scroll>true</scroll>
-                    <align>left</align>
-                    <aligny>center</aligny>
-                    <font>Font_Tahoma_20</font>
-                    <textcolor>ff00b8f5</textcolor>
-                </control>
-                <control type="textbox">
-                    <description>Plot</description>
-                    <posx>0</posx>
-                    <posy>70</posy>
-                    <width>700</width>
-                    <height>170</height>
-                    <font>Font_Tahoma_20</font>
-                    <align>justify</align>
-                    <textcolor>white</textcolor>
-                    <label>$INFO[VideoPlayer.Plot]</label>
-                    <pagecontrol>602</pagecontrol>
+                    <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Movies_Autoscroll_plot)</autoscroll>
                 </control>
-                <control type="scrollbar" id="602">
+                <control type="scrollbar" id="600">
                     <description>Plot scrollbar</description>
-                    <posx>710</posx>
-                    <posy>70</posy>
-                    <width>26</width>
-                    <height>170</height>
-                    <texturesliderbackground>scrollbar_vertical_background.png</texturesliderbackground>
-                    <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
+                    <posx>628</posx>
+                    <posy>0</posy>
+                    <width>52</width>
+                    <height>255</height>
+                    <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
                     <showonepage>true</showonepage>
                     <orientation>vertical</orientation>
-                    <visible allowhiddenfocus="true">VideoPlayer.Content(Movies) + Control.HasFocus(602)</visible>
+                    <visible allowhiddenfocus="true">Control.HasFocus(600)</visible>
+                </control>
+                <control type="group">
+                    <description>Media flags</description>
+                    <posx>0</posx>
+                    <posy>225</posy>
+                    <width>270</width>
+                    <height>38</height>
+                    <control type="image">
+                        <description>Video res if bluray</description>
+                        <posx>0</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>flags/video/bluray.png</texture>
+                        <visible>substring(videoplayer.filename,bluray) | substring(videoplayer.filename,blu-ray) | substring(videoplayer.filename,bdrip)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Video res if hddvd</description>
+                        <posx>0</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>flags/video/hddvd.png</texture>
+                        <visible>substring(videoplayer.filename,hddvd) | substring(videoplayer.filename,hd-dvd)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Video res if web-dl</description>
+                        <posx>0</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>flags/video/web-dl.png</texture>
+                        <visible>substring(videoplayer.filename,web-dl)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Video res in any other case</description>
+                        <posx>0</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[VideoPlayer.VideoResolution,flags/video/,.png]</texture>
+                        <visible>!substring(VideoPlayer.filename,web-dl) + !substring(VideoPlayer.filename,bluray) + !substring(VideoPlayer.filename,blu-ray) + !substring(VideoPlayer.filename,bdrip) + !substring(VideoPlayer.filename,hddvd) + !substring(VideoPlayer.filename,hd-dvd)</visible>
+                    </control>
+                    <control type="image">
+                        <description>Video codec</description>
+                        <posx>56</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <description>Video aspectratio</description>
+                        <posx>107</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <description>Audio Codec</description>
+                        <posx>163</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
+                    </control>
+                    <control type="image">
+                        <description>Audio Channels</description>
+                        <posx>219</posx>
+                        <width>51</width>
+                        <height>38</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
+                    </control>
                 </control>
             </control>
             <control type="group">
@@ -235,61 +203,6 @@
                     <aligny>center</aligny>
                     <font>Font_Condensed_Bold_40</font>
                     <textcolor>white</textcolor>
-                </control>
-            </control>
-            <control type="grouplist">
-                <description>Media Codec Flagging Images</description>
-                <posx>1072</posx>
-                <posy>90</posy>
-                <itemgap>0</itemgap>
-                <orientation>vertical</orientation>
-                <control type="image">
-                    <description>Video rez Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.VideoResolution,flags/video/,.png]</texture>
-                </control>
-                <control type="image">
-                    <description>Common Codec Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
-                    <!-- Don't show if its one of the 500 divx codecs -->
-                    <visible>![substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
-                </control>
-                <control type="image">
-                    <description>Divx Codec Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>flags/video/divx.png</texture>
-                    <visible>[substring(VideoPlayer.VideoCodec,div,left) | stringcompare(VideoPlayer.VideoCodec,dx50)]</visible>
-                </control>
-                <control type="image">
-                    <description>Dolby Digital Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>flags/audio/dolbydigital.png</texture>
-                    <visible>[stringcompare(VideoPlayer.AudioCodec,ac3) + stringcompare(VideoPlayer.AudioChannels,6)]</visible>
-                </control>
-                <control type="image">
-                    <description>Audio Codec Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
-                    <!-- Don't show if I want the Dolby Digital Logo -->
-                    <visible>![stringcompare(VideoPlayer.AudioCodec,ac3) + stringcompare(VideoPlayer.AudioChannels,6)]</visible>
-                </control>
-                <control type="image">
-                    <description>Audio Channels Image</description>
-                    <width>80</width>
-                    <height>40</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
                 </control>
             </control>
         </control>
