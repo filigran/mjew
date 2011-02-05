@@ -237,19 +237,37 @@
                                 <onclick>Skin.ToggleSetting(TVShows_Hide_Watched_Overlay)</onclick>
                                 <selected>Skin.HasSetting(TVShows_Hide_Watched_Overlay)</selected>
                             </control>
-                            <control type="label" id="115">
+                            <control type="radiobutton" id="115">
+                                <description>TVTunes</description>
+                                <include>Skin_Settings_RadiobuttonTemplate</include>
+                                <label>31443</label>
+                                <onclick>Skin.ToggleSetting(TVShows_Enable_TVTunes)</onclick>
+                                <selected>Skin.HasSetting(TVShows_Enable_TVTunes)</selected>
+                            </control>
+                            <control type="label" id="125">
+                                <description>TVTunes info</description>
+                                <width>700</width>
+                                <height>45</height>
+                                <aligny>center</aligny>
+                                <font>Font_Normal_20</font>
+                                <textcolor>ffdddddd</textcolor>
+                                <wrapmultiline>true</wrapmultiline>
+                                <label>31444</label>
+                                <visible>Skin.HasSetting(TVShows_Enable_TVTunes)</visible>
+                            </control>
+                            <control type="label" id="116">
                                 <description>Start window header</description>
                                 <include>Skin_Settings_LabelTemplate</include>
                                 <label>512</label>
                             </control>
-                            <control type="radiobutton" id="116">
+                            <control type="radiobutton" id="117">
                                 <description>Startup playlist</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>21398</label>
                                 <onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
                                 <selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
                             </control>
-                            <control type="button" id="117">
+                            <control type="button" id="118">
                                 <description>Startup Playlist Path</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>15311</label>
@@ -257,19 +275,19 @@
                                 <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u,t:\playlists\music\)</onclick>
                                 <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
                             </control>
-                            <control type="label" id="118">
+                            <control type="label" id="119">
                                 <description>Backgrounds</description>
                                 <include>Skin_Settings_LabelTemplate</include>
                                 <label>31102</label>
                             </control>
-                            <control type="radiobutton" id="119">
+                            <control type="radiobutton" id="120">
                                 <description>Show playing video instead of fanart</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31124</label>
                                 <onclick>Skin.ToggleSetting(Show_Video_Fanart)</onclick>
                                 <selected>Skin.HasSetting(Show_Video_Fanart)</selected>
                             </control>
-                            <control type="radiobutton" id="120">
+                            <control type="radiobutton" id="121">
                                 <description>Show visualization instead of fanart</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31125</label>
@@ -311,6 +329,7 @@
                                 <description>Show Recently added info for movies</description>
                                 <include>Skin_Settings_RadiobuttonTemplate</include>
                                 <label>31117</label>
+                                <onclick>Skin.ToggleSetting(Home_Show_RecentlyAdded_Movies)</onclick>
                                 <selected>Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</selected>
                             </control>
                             <control type="radiobutton" id="202">
@@ -335,10 +354,12 @@
                                 <selected>Skin.HasSetting(Home_Show_WeatherInfo)</selected>
                             </control>
                             <control type="radiobutton" id="221">
-                                <label>31212</label>
-                                <onclick>Skin.ToggleSetting(Qlock)</onclick>
+                                <description>Enable qlock</description>
+                                <label>31445</label>
+                                <include>Skin_Settings_RadiobuttonTemplate</include>
+                                <onclick>Skin.ToggleSetting(Home_Show_Qlock)</onclick>
                                 <onclick>RunScript(script.qlock,-startup)</onclick>
-                                <selected>Skin.HasSetting(Qlock)</selected>
+                                <selected>Skin.HasSetting(Home_Show_Qlock)</selected>
                             </control>
                             <control type="label" id="206">
                                 <description>Hide categories header</description>

@@ -5,8 +5,8 @@
         <posy>-115</posy>
         <width>1665</width>
         <height>455</height>
-        <onup>901</onup>
-        <ondown>902</ondown>
+        <onup>9000</onup>
+        <ondown>60</ondown>
         <pagecontrol>60</pagecontrol>
         <scrolltime>200</scrolltime>
         <focusposition>3</focusposition>
@@ -42,7 +42,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>8800ff00</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                 </control>
                 <control type="image">
                     <posx>205</posx>
@@ -52,7 +52,7 @@
                     <aspectratio>stretch</aspectratio>
                     <colordiffuse>8800ff00</colordiffuse>
                     <texture flipy="true" diffuse="mjew/poster_reflection.png" background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                 </control>
             </control>
         </itemlayout>
@@ -89,7 +89,7 @@
                     <font>Font_Condensed_Caps_24</font>
                     <textcolor>white</textcolor>
                     <align>left</align>
-                    <label fallback="">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
+                    <label fallback="31446">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</label>
                 </control>
                 <control type="image">
                     <description>Watched icon</description>
@@ -203,7 +203,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>lime</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                     <animation tween="back" reversible="false" effect="zoom" center="120,30" start="80" end="120" time="400">focus</animation>
                 </control>
                 <control type="image">
@@ -215,7 +215,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture flipy="true" diffuse="mjew/poster_reflection.png" background="true">special://skin/media/$INFO[ListItem.Overlay]</texture>
                     <colordiffuse>lime</colordiffuse>
-                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !!Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
+                    <visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + !Skin.HasSetting(TVShows_Hide_Watched_Overlay)</visible>
                     <animation tween="back" reversible="false" effect="zoom" center="120,100" start="80" end="120" time="400">focus</animation>
                 </control>
             </control>
@@ -226,21 +226,6 @@
             <description>Buttons for onup conditions</description>
             <posx>-2000</posx>
             <control type="button">
-                <description>Logos centered and up press from list 508 or 509</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(9000)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom and up press from list 508 or 509 if info not visible</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + !Skin.HasSetting(TVShows_Logos_Centered) + !Skin.HasSetting(TVShows_Show_Info)</visible>
-                <onfocus>SetFocus(9000)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom and up press from list 508 or 509 if info visible</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)] + !Skin.HasSetting(TVShows_Logos_Centered) + Skin.HasSetting(TVShows_Show_Info)</visible>
-                <onfocus>SetFocus(600)</onfocus>
-            </control>
-            <control type="button">
                 <description>Up press from scrollbar 60 if 508 visible</description>
                 <visible>Control.IsVisible(508) + Control.HasFocus(60)</visible>
                 <onfocus>SetFocus(508)</onfocus>
@@ -248,68 +233,6 @@
             <control type="button">
                 <description>Up press from scrollbar 60 if 509 visible</description>
                 <visible>Control.IsVisible(509) + Control.HasFocus(60)</visible>
-                <onfocus>SetFocus(509)</onfocus>
-            </control>
-        </control>
-        <control type="group" id="902">
-            <description>Buttons for ondown conditions</description>
-            <posx>-2000</posx>
-            <control type="button">
-                <description>Down press from list 508 or 509</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + [Control.HasFocus(508) | Control.HasFocus(509)]</visible>
-                <onfocus>SetFocus(60)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos centered and down press from scrollbar 60 if info visible</description>
-                <visible>Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered) + Skin.HasSetting(TVShows_Show_Info)</visible>
-                <onfocus>SetFocus(600)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos centered and down press from scrollbar 60 if info not visible</description>
-                <visible>Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + Skin.HasSetting(TVShows_Logos_Centered) + !Skin.HasSetting(TVShows_Show_Info)</visible>
-                <onfocus>SetFocus(9000)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom and down press from scrollbar 60</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(60) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(9000)</onfocus>
-            </control>
-        </control>
-        <control type="group" id="903">
-            <description>Buttons for onleft conditions</description>
-            <posx>-2000</posx>
-            <control type="button">
-                <description>Logos centered and left press scrollbar 600</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(600) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(60)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom, 508 visible and left press scrollbar 600</description>
-                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(508)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom, 509 visible and left press scrollbar 600</description>
-                <visible>Control.IsVisible(509) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(509)</onfocus>
-            </control>
-        </control>
-        <control type="group" id="904">
-            <description>Buttons for onright conditions</description>
-            <posx>-2000</posx>
-            <control type="button">
-                <description>Logos centered and right press scrollbar 600</description>
-                <visible>[Control.IsVisible(508) | Control.IsVisible(509)] + Control.HasFocus(600) + Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(60)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom, 508 visible and right press scrollbar 600</description>
-                <visible>Control.IsVisible(508) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
-                <onfocus>SetFocus(508)</onfocus>
-            </control>
-            <control type="button">
-                <description>Logos at bottom, 509 visible and right press scrollbar 600</description>
-                <visible>Control.IsVisible(509) + Control.HasFocus(600) + !Skin.HasSetting(TVShows_Logos_Centered)</visible>
                 <onfocus>SetFocus(509)</onfocus>
             </control>
         </control>
@@ -463,15 +386,15 @@
                 <height>52</height>
                 <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
                 <onup>901</onup>
-                <ondown>902</ondown>
+                <ondown>9000</ondown>
                 <showonepage>false</showonepage>
                 <orientation>horizontal</orientation>
                 <visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
             </control>
             <control type="group">
                 <description>Next episode air date</description>
-                <posx>340</posx>
-                <posy>190</posy>
+                <posx>520</posx>
+                <posy>30r</posy>
                 <include>Next_Aired</include>
             </control>
         </control>

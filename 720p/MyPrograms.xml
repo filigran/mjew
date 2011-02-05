@@ -9,6 +9,7 @@
             <include>CommonGamesBackground</include>
             <include>CommonMediaPlayingBackground</include>
             <include>Global_BackgroundDiffuser</include>
+            <include>Bottom_Part</include>
             <control type="group">
                 <include>Window_OpenClose_Animation</include>
                 <control type="image">

@@ -6,7 +6,7 @@
         <animation effect="slide" end="0,210" time="0" condition="Container(515).Row(3)">Conditional</animation>
         <animation effect="slide" end="0,280" time="0" condition="Container(515).Row(4)">Conditional</animation>
         <animation effect="slide" end="0,350" time="0" condition="Container(515).Row(5)">Conditional</animation>
-        <animation effect="slide" end="0,420" time="0" condition="Container(515).Row(6)">Conditional</animation>
+        <animation effect="slide" end="0,410" time="0" condition="Container(515).Row(6)">Conditional</animation>
     </include>
     <include name="Viewtype_EpisodeList">
         <control type="group" id="603">
@@ -23,12 +23,33 @@
                 <onfocus>SetFocus(601)</onfocus>
             </control>
         </control>
+        <control type="image">
+            <description>Background</description>
+            <posx>50</posx>
+            <posy>90</posy>
+            <width>1180</width>
+            <height>570</height>
+            <texture border="10" background="true">mjew/home_menu_background.png</texture>
+            <colordiffuse>aa000000</colordiffuse>
+            <visible>Control.IsVisible(515)</visible>
+        </control>
+        <control type="image">
+            <description>Background reflection</description>
+            <posx>50</posx>
+            <posy>660</posy>
+            <width>1180</width>
+            <height>50</height>
+            <texture flipy="true" diffuse="mjew/home_menu_reflection.png" border="10" background="true">mjew/home_menu_background.png</texture>
+            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+            <colordiffuse>88000000</colordiffuse>
+            <visible>Control.IsVisible(515)</visible>
+        </control>
         <control type="fixedlist" id="515">
             <visible>Container.Content(Episodes)</visible>
             <posx>400</posx>
-            <posy>100</posy>
+            <posy>130</posy>
             <width>880</width>
-            <height>581</height>
+            <height>490</height>
             <onleft>603</onleft>
             <onright>600</onright>
             <onup>515</onup>
@@ -40,17 +61,6 @@
             <movement>3</movement>
             <focusposition>2</focusposition>
             <itemlayout height="70">
-                <control type="image">
-                    <description>Left border</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>3</width>
-                    <height>70</height>
-                    <aspectratio>stretch</aspectratio>
-                    <aligny>center</aligny>
-                    <texture>special://skin/media/white.png</texture>
-                    <colordiffuse>5500b8f5</colordiffuse>
-                </control>
                 <control type="label">
                     <description>Episode number without padding</description>
                     <posx>30</posx>
@@ -86,7 +96,7 @@
                     <height>30</height>
                     <aligny>center</aligny>
                     <label>$INFO[Listitem.Title]</label>
-                    <font>Font_Condensed_Bold_Caps_24</font>
+                    <font>Font_Condensed_Caps_24</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <selectedcolor>ff00b8f5</selectedcolor>
@@ -106,70 +116,18 @@
                 <control type="label">
                     <description>Premiered and runtime label</description>
                     <posx>80</posx>
-                    <posy>25</posy>
+                    <posy>30</posy>
                     <width>400</width>
                     <height>30</height>
                     <align>left</align>
-                    <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ] $INFO[ListItem.Duration, /  $LOCALIZE[2050]: , $LOCALIZE[12391]]</label>
-                    <font>Font_Normal_18</font>
-                    <textcolor>white</textcolor>
+                    <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ]$INFO[ListItem.Duration,   •   $LOCALIZE[2050]: , $LOCALIZE[31410]]</label>
+                    <font>Font_Condensed_Caps_16</font>
+                    <textcolor>ffdddddd</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <selectedcolor>ff00b8f5</selectedcolor>
                 </control>
             </itemlayout>
             <focusedlayout height="231">
-                <control type="image">
-                    <description>Focused item background</description>
-                    <posx>0</posx>
-                    <posy>3</posy>
-                    <width>880</width>
-                    <height>208</height>
-                    <aspectratio>stretch</aspectratio>
-                    <aligny>center</aligny>
-                    <texture>special://skin/media/white.png</texture>
-                    <colordiffuse>88000000</colordiffuse>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                </control>
-                <control type="image">
-                    <description>Focused item Left border</description>
-                    <posx>0</posx>
-                    <posy>214</posy>
-                    <width>3</width>
-                    <height>17</height>
-                    <aspectratio>stretch</aspectratio>
-                    <aligny>center</aligny>
-                    <texture>special://skin/media/white.png</texture>
-                    <colordiffuse>5500b8f5</colordiffuse>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                </control>
-                <control type="image">
-                    <description>Focused item top border</description>
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>880</width>
-                    <height>3</height>
-                    <aspectratio>stretch</aspectratio>
-                    <aligny>center</aligny>
-                    <texture>special://skin/media/white.png</texture>
-                    <colordiffuse>5500b8f5</colordiffuse>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                </control>
-                <control type="image">
-                    <description>Focused item bottom border</description>
-                    <posx>0</posx>
-                    <posy>211</posy>
-                    <width>880</width>
-                    <height>3</height>
-                    <aspectratio>stretch</aspectratio>
-                    <aligny>center</aligny>
-                    <texture>special://skin/media/white.png</texture>
-                    <colordiffuse>5500b8f5</colordiffuse>
-                    <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
-                    <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                </control>
                 <control type="image">
                     <description>Thumb</description>
                     <posx>30</posx>
@@ -189,7 +147,7 @@
                     <height>140</height>
                     <aspectratio>scale</aspectratio>
                     <texture>special://skin/media/16x9_frame_small.png</texture>
-                    <colordiffuse>8800b8f5</colordiffuse>
+                    <colordiffuse>ff498999</colordiffuse>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                     <visible>Control.HasFocus(515)</visible>
@@ -201,7 +159,7 @@
                     <width>75</width>
                     <height>75</height>
                     <aspectratio>stretch</aspectratio>
-                    <colordiffuse>ff00b8f5</colordiffuse>
+                    <colordiffuse>ff498999</colordiffuse>
                     <texture>special://skin/media/engsubback.png</texture>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
@@ -254,10 +212,10 @@
                     <description>Episode title</description>
                     <posx>342</posx>
                     <posy>15</posy>
-                    <width>515</width>
+                    <width>460</width>
                     <height>30</height>
                     <label>$INFO[Listitem.Title]</label>
-                    <font>Font_Condensed_Bold_Caps_30</font>
+                    <font>Font_Condensed_Caps_30</font>
                     <textcolor>white</textcolor>
                     <selectedcolor>ff00b8f5</selectedcolor>
                     <pauseatend>2000</pauseatend>
@@ -276,7 +234,7 @@
                 <control type="image">
                     <description>Rating</description>
                     <posx>327</posx>
-                    <posy>170</posy>
+                    <posy>172</posy>
                     <width>90</width>
                     <height>30</height>
                     <aspectratio>keep</aspectratio>
@@ -285,25 +243,25 @@
                     <colordiffuse>ffeaf188</colordiffuse>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
-                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags) | IsEmpty(ListItem.VideoResolution)">conditional</animation>
                     <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Rating)</visible>
                 </control>
                 <control type="label">
                     <description>Duration + air date</description>
                     <posx>442</posx>
-                    <posy>170</posy>
-                    <width>400</width>
+                    <posy>172</posy>
+                    <width>370</width>
                     <height>30</height>
                     <align>left</align>
                     <aligny>center</aligny>
-                    <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ] $INFO[ListItem.Duration, /  $LOCALIZE[2050]: , $LOCALIZE[12391]]</label>
-                    <font>Font_Normal_18</font>
+                    <label>$INFO[ListItem.Premiered,$LOCALIZE[20416]: ]$INFO[ListItem.Duration,   •   $LOCALIZE[2050]: , $LOCALIZE[31410]]</label>
+                    <font>Font_Condensed_Caps_18</font>
                     <textcolor>ffdddddd</textcolor>
                     <selectedcolor>ffdddddd</selectedcolor>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                     <animation effect="slide" start="0,0" end="-115,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_Rating)">conditional</animation>
-                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags)">conditional</animation>
+                    <animation effect="slide" start="0,0" end="-299,0" time="0" reversible="false" condition="!Skin.HasSetting(Episodes_Show_MediaFlags) | IsEmpty(ListItem.VideoResolution)">conditional</animation>
                 </control>
                 <control type="image">
                     <description>Watched overlay</description>
@@ -323,6 +281,15 @@
         </control>
         <control type="group">
             <visible>Control.IsVisible(515) + Container.Content(Episodes)</visible>
+            <control type="image">
+                <description>Left background</description>
+                <posx>390</posx>
+                <posy>130</posy>
+                <width>2</width>
+                <height>490</height>
+                <texture>mjew/episodelist_separator.png</texture>
+                <colordiffuse>aa498999</colordiffuse>
+            </control>
             <control type="scrollbar" id="60">
                 <posx>50r</posx>
                 <posy>80</posy>
@@ -336,12 +303,13 @@
                 <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(60)</visible>
             </control>
             <control type="textbox">
+                <description>Focused item plot</description>
                 <posx>702</posx>
-                <posy>155</posy>
-                <width>548</width>
+                <posy>185</posy>
+                <width>508</width>
                 <height>103</height>
                 <align>left</align>
-                <info>ListItem.Plot</info>
+                <label fallback="31409">$INFO[ListItem.Plot]</label>
                 <font>Font_Tahoma_20</font>
                 <textcolor>white</textcolor>
                 <selectedcolor>white</selectedcolor>
@@ -351,12 +319,12 @@
                 <visible>Control.IsVisible(515)</visible>
             </control>
             <control type="scrollbar" id="600">
-                <posx>1262</posx>
-                <posy>155</posy>
-                <width>26</width>
-                <height>105</height>
-                <texturesliderbackground>scrollbar_vertical_background.png</texturesliderbackground>
-                <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
+                <description>Focused item plot scrollbar</description>
+                <posx>1206</posx>
+                <posy>165</posy>
+                <width>52</width>
+                <height>145</height>
+                <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
                 <onleft>515</onleft>
                 <onright>60</onright>
                 <include>Animation_EpisodePlot515</include>
@@ -364,251 +332,135 @@
                 <orientation>vertical</orientation>
                 <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(600)</visible>
             </control>
-            <control type="image">
-                <description>Left info bar background if not rss visible</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>400</width>
-                <height>720</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>88000000</colordiffuse>
-                <visible>!Skin.HasSetting(Show_RSS_Everywhere) | !System.GetBool(lookandfeel.enablerssfeeds)</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar background if rss visible</description>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>400</width>
-                <height>690</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>88000000</colordiffuse>
-                <visible>Skin.HasSetting(Show_RSS_Everywhere) + System.GetBool(lookandfeel.enablerssfeeds)</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right top border if 1 or 2 item</description>
-                <posx>400</posx>
-                <posy>0</posy>
-                <width>3</width>
-                <height>240</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>StringCompare(Container(515).NumItems,1) | StringCompare(Container(515).NumItems,2)</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right top border if 3 or 4 items</description>
-                <posx>400</posx>
-                <posy>0</posy>
-                <width>3</width>
-                <height>170</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>StringCompare(Container(515).NumItems,3) | StringCompare(Container(515).NumItems,4)</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right top border if 5 items or more</description>
-                <posx>400</posx>
-                <posy>0</posy>
-                <width>3</width>
-                <height>100</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>IntegerGreaterThan(Container(515).NumItems,4)</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right bottom border if not rss visible and 1 item</description>
-                <posx>400</posx>
-                <posy>471</posy>
-                <width>3</width>
-                <height>250</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>StringCompare(Container(515).NumItems,1) + [!Skin.HasSetting(Show_RSS_Everywhere) | !System.GetBool(lookandfeel.enablerssfeeds)]</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right bottom border if not rss visible and 2 or 3 items</description>
-                <posx>400</posx>
-                <posy>541</posy>
-                <width>3</width>
-                <height>179</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>[StringCompare(Container(515).NumItems,2) | StringCompare(Container(515).NumItems,3)] + [!Skin.HasSetting(Show_RSS_Everywhere) | !System.GetBool(lookandfeel.enablerssfeeds)]</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right bottom border if not rss visible and 4 or 5 items</description>
-                <posx>400</posx>
-                <posy>611</posy>
-                <width>3</width>
-                <height>110</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>[StringCompare(Container(515).NumItems,4) | StringCompare(Container(515).NumItems,5)] + [!Skin.HasSetting(Show_RSS_Everywhere) | !System.GetBool(lookandfeel.enablerssfeeds)]</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right bottom border if not rss visible and 6 items or more</description>
-                <posx>400</posx>
-                <posy>681</posy>
-                <width>3</width>
-                <height>39</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>IntegerGreaterThan(Container(515).NumItems,5) + [!Skin.HasSetting(Show_RSS_Everywhere) | !System.GetBool(lookandfeel.enablerssfeeds)]</visible>
-            </control>
-            <control type="image">
-                <description>Left info bar right bottom border if rss visible</description>
-                <posx>400</posx>
-                <posy>681</posy>
-                <width>3</width>
-                <height>6</height>
-                <aspectratio>stretch</aspectratio>
-                <aligny>center</aligny>
-                <texture>special://skin/media/white.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>Skin.HasSetting(Show_RSS_Everywhere) + System.GetBool(lookandfeel.enablerssfeeds)</visible>
-            </control>
-            <control type="image" id="7005">
-                <description>TV Show logo</description>
-                <posx>70</posx>
-                <posy>10</posy>
-                <width>260</width>
-                <height>100</height>
-                <aspectratio>keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Path,,../logo.png]</texture>
-            </control>
-            <control type="label">
-                <description>Label fallback for logo</description>
-                <posx>50</posx>
-                <posy>30</posy>
-                <width>300</width>
-                <height>100</height>
-                <font>Font_Normal_Bold_Caps_40</font>
-                <textcolor>ffffffff</textcolor>
-                <aligny>center</aligny>
-                <align>left</align>
-                <label>$INFO[ListItem.TVShowTitle]</label>
-                <wrapmultiline>true</wrapmultiline>
-                <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
-                <visible>IsEmpty(Control.GetLabel(7005))</visible>
-            </control>
-            <control type="label">
-                <description>Season number</description>
-                <posx>50</posx>
-                <posy>150</posy>
-                <width>350</width>
-                <height>30</height>
-                <font>Font_Condensed_Bold_Caps_36</font>
-                <textcolor>ff00b8f5</textcolor>
-                <align>left</align>
-                <label>$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
-            </control>
-            <control type="label">
-                <description>Episode count</description>
-                <posx>50</posx>
-                <posy>190</posy>
-                <width>350</width>
-                <height>30</height>
-                <font>Font_Condensed_Bold_Caps_24</font>
-                <textcolor>ffdddddd</textcolor>
-                <align>left</align>
-                <label>$INFO[Container(515).NumItems,, $LOCALIZE[20360]]</label>
-            </control>
             <control type="group">
-                <posx>500</posx>
-                <posy>690</posy>
-                <include>Next_Aired</include>
-            </control>
-            <control type="textbox">
-                <description>TV Show plot if not small fanart</description>
-                <posx>50</posx>
-                <posy>240</posy>
-                <width>325</width>
-                <height>417</height>
-                <align>left</align>
-                <info>Container.ShowPlot</info>
-                <font>Font_Tahoma_20</font>
-                <pagecontrol>601</pagecontrol>
-                <textcolor>ffdddddd</textcolor>
-                <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_fanart)</visible>
-            </control>
-            <control type="textbox">
-                <description>TV Show plot if small fanart</description>
-                <posx>50</posx>
-                <posy>240</posy>
-                <width>325</width>
-                <height>245</height>
-                <align>left</align>
-                <info>Container.ShowPlot</info>
-                <font>Font_Arial_18</font>
-                <pagecontrol>602</pagecontrol>
-                <textcolor>ffdddddd</textcolor>
-                <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_fanart)</visible>
-            </control>
-            <control type="scrollbar" id="601">
-                <description>TV Show plot scrollbar if not small fanart</description>
-                <posx>380</posx>
-                <posy>240</posy>
-                <width>26</width>
-                <height>417</height>
-                <texturesliderbackground>scrollbar_vertical_background.png</texturesliderbackground>
-                <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
-                <onleft>9000</onleft>
-                <onright>515</onright>
-                <showonepage>true</showonepage>
-                <orientation>vertical</orientation>
-                <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(601) + !Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
-            </control>
-            <control type="scrollbar" id="602">
-                <description>TV Show plot scrollbar if small fanart</description>
-                <posx>380</posx>
-                <posy>240</posy>
-                <width>26</width>
-                <height>245</height>
-                <texturesliderbackground>scrollbar_vertical_background.png</texturesliderbackground>
-                <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus>
-                <onleft>9000</onleft>
-                <onright>515</onright>
-                <showonepage>true</showonepage>
-                <orientation>vertical</orientation>
-                <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(602) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
-            </control>
-            <control type="image">
-                <description>TV Show small fanart</description>
-                <posx>38</posx>
-                <posy>520</posy>
-                <width>320</width>
-                <height>180</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
-                <texture background="true" diffuse="16x9_diffuse.png">$INFO[Fanart.Image]</texture>
-                <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
-            </control>
-            <control type="image">
-                <description>TV Show small fanart frame</description>
-                <posx>38</posx>
-                <posy>520</posy>
-                <width>320</width>
-                <height>180</height>
-                <aspectratio>scale</aspectratio>
-                <texture>special://skin/media/16x9_frame.png</texture>
-                <colordiffuse>5500b8f5</colordiffuse>
-                <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+                <posx>80</posx>
+                <posy>50</posy>
+                <control type="image" id="7006">
+                    <description>TV Show logo</description>
+                    <posx>20</posx>
+                    <posy>10</posy>
+                    <width>260</width>
+                    <height>100</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture background="true">$INFO[ListItem.Path,,../logo.png]</texture>
+                </control>
+                <control type="label">
+                    <description>Label fallback for logo</description>
+                    <posx>0</posx>
+                    <posy>10</posy>
+                    <width>300</width>
+                    <height>100</height>
+                    <font>Font_Normal_Bold_Caps_40</font>
+                    <textcolor>ffffffff</textcolor>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <label>$INFO[ListItem.TVShowTitle]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+                    <visible>IsEmpty(Control.GetLabel(7006))</visible>
+                </control>
+                <control type="label">
+                    <description>Season number</description>
+                    <posx>0</posx>
+                    <posy>130</posy>
+                    <width>350</width>
+                    <height>30</height>
+                    <font>Font_Condensed_Caps_30</font>
+                    <textcolor>ff498999</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Season,$LOCALIZE[20373] ]</label>
+                </control>
+                <control type="label">
+                    <description>Episode count</description>
+                    <posx>0</posx>
+                    <posy>170</posy>
+                    <width>350</width>
+                    <height>30</height>
+                    <font>Font_Condensed_Caps_20</font>
+                    <textcolor>ffdddddd</textcolor>
+                    <align>left</align>
+                    <label>$INFO[Container(515).NumItems,, $LOCALIZE[20360]]</label>
+                </control>
+                <control type="group">
+                    <posx>0</posx>
+                    <posy>200</posy>
+                    <include>Next_Aired</include>
+                </control>
+                <control type="textbox">
+                    <description>TV Show plot if not small fanart</description>
+                    <posx>0</posx>
+                    <posy>210</posy>
+                    <width>280</width>
+                    <height>345</height>
+                    <align>left</align>
+                    <info>Container.ShowPlot</info>
+                    <font>Font_Tahoma_20</font>
+                    <pagecontrol>601</pagecontrol>
+                    <textcolor>ffcccccc</textcolor>
+                    <animation effect="slide" end="0,30" time="0" condition="StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.19.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.TVShowTitle)">Conditional</animation>
+                    <visible>Container.Content(Episodes) + !Skin.HasSetting(Episodes_Show_small_fanart)</visible>
+                </control>
+                <control type="textbox">
+                    <description>TV Show plot if small fanart</description>
+                    <posx>0</posx>
+                    <posy>210</posy>
+                    <width>280</width>
+                    <height>150</height>
+                    <align>left</align>
+                    <info>Container.ShowPlot</info>
+                    <font>Font_Tahoma_20</font>
+                    <pagecontrol>602</pagecontrol>
+                    <textcolor>ffdddddd</textcolor>
+                    <animation effect="slide" end="0,30" time="0" condition="StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.1.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.2.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.3.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.4.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.5.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.6.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.7.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.8.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.9.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.10.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.11.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.12.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.13.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.14.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.15.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.16.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.17.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.18.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.19.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.20.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.21.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.22.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.23.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.24.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.25.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.26.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.27.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.28.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.29.ShowTitle),ListItem.TVShowTitle) | StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.Label) | StringCompare(Window(Home).Property(NextAired.30.ShowTitle),ListItem.TVShowTitle)">Conditional</animation>
+                    <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_small_fanart)</visible>
+                </control>
+                <control type="scrollbar" id="601">
+                    <description>TV Show plot scrollbar if not small fanart</description>
+                    <posx>-45</posx>
+                    <posy>240</posy>
+                    <width>52</width>
+                    <height>340</height>
+                    <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
+                    <onleft>9000</onleft>
+                    <onright>515</onright>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(601) + !Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+                </control>
+                <control type="scrollbar" id="602">
+                    <description>TV Show plot scrollbar if small fanart</description>
+                    <posx>-45</posx>
+                    <posy>150</posy>
+                    <width>52</width>
+                    <height>350</height>
+                    <textureslidernibfocus>scrollbar_horizontal_nib.png</textureslidernibfocus>
+                    <onleft>9000</onleft>
+                    <onright>515</onright>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                    <visible allowhiddenfocus="true">Control.IsVisible(515) + Control.HasFocus(602) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+                </control>
+                <control type="image">
+                    <description>TV Show small fanart</description>
+                    <posx>0</posx>
+                    <posy>410</posy>
+                    <width>320</width>
+                    <height>180</height>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <texture background="true" diffuse="16x9_diffuse.png">$INFO[Fanart.Image]</texture>
+                    <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+                </control>
+                <control type="image">
+                    <description>TV Show small fanart frame</description>
+                    <posx>0</posx>
+                    <posy>410</posy>
+                    <width>320</width>
+                    <height>180</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>special://skin/media/16x9_frame.png</texture>
+                    <colordiffuse>550b8f5</colordiffuse>
+                    <visible>Container.Content(Episodes) + Skin.HasSetting(Episodes_Show_Small_Fanart)</visible>
+                </control>
             </control>
         </control>
     </include>

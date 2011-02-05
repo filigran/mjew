@@ -8,7 +8,7 @@
                 <description>Now playing music</description>
                 <posx>20</posx>
                 <posy>-35</posy>
-                <visible>Player.HasAudio</visible>
+                <visible>Player.HasAudio + !SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
                 <control type="image">
                     <description>Cover</description>
                     <posx>0</posx>

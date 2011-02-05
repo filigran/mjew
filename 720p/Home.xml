@@ -4,6 +4,39 @@
     <animation effect="fade" time="500" start="0" end="100">WindowOpen</animation>
     <animation effect="fade" time="500" start="100" end="0">WindowClose</animation>
     <controls>
+        <control type="group" id="901">
+            <posx>-2000</posx>
+            <control type="button">
+                <description>Recently Added Music enabled</description>
+                <onfocus>SetFocus(323)</onfocus>
+                <visible>Container(300).HasFocus(3) + Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+            </control>
+            <control type="button">
+                <description>Recently Added Music disabled</description>
+                <onfocus>SetFocus(300)</onfocus>
+                <visible>Container(300).HasFocus(3) + !Skin.HasSetting(Home_Show_RecentlyAdded_Music)</visible>
+            </control>
+            <control type="button">
+                <description>Recently Added Episodes enabled</description>
+                <onfocus>SetFocus(324)</onfocus>
+                <visible>Container(300).HasFocus(4) + Skin.HasSetting(Home_Show_RecentlyAdded_Episodes)</visible>
+            </control>
+            <control type="button">
+                <description>Recently Added Episodes disabled</description>
+                <onfocus>SetFocus(300)</onfocus>
+                <visible>Container(300).HasFocus(4) + !Skin.HasSetting(Home_Show_RecentlyAdded_Episodes)</visible>
+            </control>
+            <control type="button">
+                <description>Recently Added Movies enabled</description>
+                <onfocus>SetFocus(325)</onfocus>
+                <visible>Container(300).HasFocus(5) + Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+            </control>
+            <control type="button">
+                <description>Recently Added Movies disabled</description>
+                <onfocus>SetFocus(300)</onfocus>
+                <visible>Container(300).HasFocus(5) + !Skin.HasSetting(Home_Show_RecentlyAdded_Movies)</visible>
+            </control>
+        </control>
         <control type="group" id="900">
             <posx>-2000</posx>
             <control type="button">
@@ -123,7 +156,9 @@
             <texture background="true">white.png</texture>
             <colordiffuse>55000000</colordiffuse>
         </control>
-        <include condition="Skin.HasSetting(Qlock)">QlockHome</include>
+        <include condition="Skin.HasSetting(Home_Show_Qlock)">QlockHome</include>
+        <include condition="Skin.HasSetting(Home_Show_RecentlyAdded_Movies) | Skin.HasSetting(Home_Show_RecentlyAdded_Music) | Skin.HasSetting(Home_Show_RecentlyAdded_Episodes)">Home_RecentlyAdded</include>
+        <include condition="Skin.HasSetting(Home_Show_WeatherInfo)">Home_Weather</include>
         <include>Bottom_Part</include>
         <control type="group">
             <description>Home Menu</description>
@@ -154,18 +189,18 @@
                 <orientation>horizontal</orientation>
                 <onleft>300</onleft>
                 <onright>300</onright>
-                <onup>900</onup>
+                <onup>901</onup>
                 <ondown>900</ondown>
                 <viewtype>list</viewtype>
                 <scrolltime>200</scrolltime>
                 <width>800</width>
                 <height>30</height>
-                <visible allowhiddenfocus="true">Control.HasFocus(300)</visible>
+                <visible allowhiddenfocus="true">Control.HasFocus(300) | Control.HasFocus(323) | Control.HasFocus(324) | Control.HasFocus(325)</visible>
                 <animation type="hidden" reversible="false">
                     <effect type="fade" start="100" end="0" time="100" />
                     <effect type="slide" start="0,0" end="0,30" time="100" />
                 </animation>
-                <animation type="visible" reversible="false">
+                <animation type="visible" reversible="false" condition="![Control.HasFocus(323) | Control.HasFocus(324) | Control.HasFocus(325)]">
                     <effect type="fade" start="0" end="100" time="100" />
                     <effect type="slide" start="0,30" end="0,0" time="100" />
                 </animation>
@@ -235,7 +270,7 @@
                         <label>2</label>
                         <icon>special://skin/media/homeicons/music.png</icon>
                         <thumb fallback="special://skin/media/backgrounds/music.jpg">$INFO[Skin.String(home_custom_back_music_folder)]</thumb>
-                        <onclick>ActivateWindow(Music,return)</onclick>
+                        <onclick>ActivateWindow(Music)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Music)</visible>
                     </item>
                     <item id="6">
@@ -251,7 +286,7 @@
                         <label>1</label>
                         <icon>special://skin/media/homeicons/pictures.png</icon>
                         <thumb fallback="special://skin/media/backgrounds/pictures.jpg">$INFO[Skin.String(home_custom_back_pictures_folder)]</thumb>
-                        <onclick>ActivateWindow(Pictures,return)</onclick>
+                        <onclick>ActivateWindow(Pictures)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Pictures)</visible>
                     </item>
                     <item id="5">
@@ -259,7 +294,7 @@
                         <label>342</label>
                         <icon>special://skin/media/homeicons/movies.png</icon>
                         <thumb fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(home_custom_back_movies_folder)]</thumb>
-                        <onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+                        <onclick>ActivateWindow(VideoLibrary,movietitles)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Movies)</visible>
                     </item>
                     <item id="4">
@@ -267,7 +302,7 @@
                         <label>20343</label>
                         <icon>special://skin/media/homeicons/tvshows.png</icon>
                         <thumb fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(home_custom_back_tvshows_folder)]</thumb>
-                        <onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+                        <onclick>ActivateWindow(VideoLibrary,tvshowtitles)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_TVShows)</visible>
                     </item>
                     <item id="8">

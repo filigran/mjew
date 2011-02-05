@@ -65,7 +65,7 @@
                     <posy>35</posy>
                     <width>625</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre, | ]</label>
+                    <label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre,   •   ]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -79,7 +79,7 @@
                     <posy>35</posy>
                     <width>625</width>
                     <height>30</height>
-                    <label>$INFO[VideoPlayer.TVShowTitle,[B],[/B]] $INFO[VideoPlayer.Season,| $LOCALIZE[20373] ]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]$INFO[VideoPlayer.Premiered, | $LOCALIZE[20416] ]</label>
+                    <label>$INFO[VideoPlayer.TVShowTitle,[B],[/B]]$INFO[VideoPlayer.Season,    •   $LOCALIZE[20373] ]$INFO[VideoPlayer.Episode,$COMMA $LOCALIZE[20452] ]</label>
                     <scroll>true</scroll>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -96,7 +96,7 @@
                     <font>Font_Tahoma_20</font>
                     <align>justify</align>
                     <textcolor>white</textcolor>
-                    <label>$INFO[VideoPlayer.Plot]</label>
+                    <label fallback="31409">$INFO[VideoPlayer.Plot]</label>
                     <pagecontrol>600</pagecontrol>
                     <autoscroll time="2000" delay="3000" repeat="5000">Skin.HasSetting(Movies_Autoscroll_plot)</autoscroll>
                 </control>

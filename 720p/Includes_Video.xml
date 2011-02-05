@@ -11,7 +11,7 @@
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>300</width>
-                    <font>Font_Condensed_24</font>
+                    <font>Font_Condensed_Caps_24</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <label>$INFO[Container(Movies).NumItems,, $LOCALIZE[31370]]</label>
@@ -21,7 +21,7 @@
                     <posx>0</posx>
                     <posy>30</posy>
                     <width>250</width>
-                    <font>Font_Condensed_18</font>
+                    <font>Font_Condensed_Caps_16</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <scrollout>false</scrollout>
@@ -39,7 +39,7 @@
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>300</width>
-                    <font>Font_Condensed_24</font>
+                    <font>Font_Condensed_Caps_24</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <label>$INFO[Container(TVShows).NumItems,, $LOCALIZE[20343]]</label>
@@ -49,7 +49,7 @@
                     <posx>0</posx>
                     <posy>30</posy>
                     <width>190</width>
-                    <font>Font_Condensed_18</font>
+                    <font>Font_Condensed_Caps_16</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <pauseatend>5000</pauseatend>
@@ -57,6 +57,7 @@
                     <label>$INFO[Window(Home).Property(Episodes.Count),, $LOCALIZE[31382]]</label>
                     <label>$INFO[Window(Home).Property(Episodes.UnWatched),, $LOCALIZE[31384]]</label>
                     <label>$INFO[Window(Home).Property(Episodes.Watched),, $LOCALIZE[31383]]</label>
+                    <label>$INFO[Container.SortMethod,$LOCALIZE[581]: ]</label>
                 </control>
             </control>
         </control>

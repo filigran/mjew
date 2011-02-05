@@ -1,7 +1,7 @@
 ﻿<window id="25">
     <defaultcontrol always="true">5043</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <views>50,519,520,521,522,501,502,508,509,503,512,513,514,515,517,518,550</views>
+    <views>50,519,520,521,522,501,502,508,509,503,512,513,514,515,516,517,518</views>
     <controls>
         <control type="button" id="5043">
             <description>Run Recently added</description>
@@ -25,7 +25,14 @@
             <label>-</label>
             <font>-</font>
             <onfocus>XBMC.RunScript(script.tv.show.next.aired,silent=True)</onfocus>
-            <onfocus>SetFocus(50)</onfocus>
+            <onfocus>SetFocus(5045)</onfocus>
+            <texturenofocus>-</texturenofocus>
+            <texturefocus>-</texturefocus>
+        </control>
+        <control type="button" id="5045">
+            <description>Run TVTunes if enabled</description>
+            <include condition="Skin.HasSetting(TVShows_Enable_TVTunes)">TVTunes_Enabled</include>
+            <include condition="!Skin.HasSetting(TVShows_Enable_TVTunes)">TVTunes_Disabled</include>
             <texturenofocus>-</texturenofocus>
             <texturefocus>-</texturefocus>
         </control>
@@ -77,19 +84,19 @@
                 <visible>!Player.HasVideo + [Container.Content(Seasons) + Skin.HasSetting(Seasons_Hide_Fanart)]</visible>
             </control>
             <control type="image">
-                <description>Default image if no fanart for episodes</description>
+                <description>Default image if content isn't anything normal</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
                 <aspectratio aligny="top">scale</aspectratio>
                 <fadetime>IconCrossfadeTime</fadetime>
-                <texture background="true" fallback="special://skin/media/backgrounds/tvshows.jpg">$INFO[Skin.String(Home_Custom_Back_Episodes_Folder)]</texture>
-                <visible>!Player.HasVideo + [Container.Content(Episodes) + Skin.HasSetting(Episodes_Hide_Fanart)]</visible>
+                <texture background="true" fallback="special://skin/media/backgrounds/movies.jpg">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</texture>
+                <visible>!Player.HasVideo + [!Container.Content(Movies) + !Container.Content(Episodes) + !Container.Content(TVShows) + !Container.Content(Seasons)]</visible>
             </control>
-                <include>Global_BackgroundDiffuser</include>
+            <include>Global_BackgroundDiffuser</include>
             <control type="group">
-                <visible>Control.IsVisible(521) | Control.IsVisible(509) | Control.IsVisible(550)</visible>
+                <visible>[Control.IsVisible(516) | Control.isVisible(517) | Control.IsVisible(518) | Control.IsVisible(519) | Control.IsVisible(520) | Control.IsVisible(521) | Control.IsVisible(509) | Control.IsVisible(515)] + !Window.IsVisible(MovieInformation)</visible>
                 <include>Bottom_Part</include>
             </control>
             <control type="group">
@@ -104,14 +111,17 @@
                 <include>Viewtype_Logo</include> <!-- view id = 508 -->
                 <include>Viewtype_Episode</include> <!-- view id = 503 -->
                 <include>Viewtype_EpisodeList</include> <!-- view id = 515 -->
-                <include>Viewtype_EpisodeList2</include> <!-- view id = 550 -->
+                <include>Viewtype_LauncherSquare</include> <!-- view id = 516 -->
                 <include>Viewtype_LauncherWide</include> <!-- view id = 517 -->
                 <include>Viewtype_LauncherTall</include> <!-- view id = 518 -->
             </control>
             <include>Scrolling_Letter</include>
             <include condition="Skin.HasSetting(Show_RSS_Everywhere)">Global_RSS</include>
             <include>Now_Playing</include>
-            <include>Totals_Count</include>
+            <control type="group">
+                <visible>!Window.IsVisible(MovieInformation)</visible>
+                <include>Totals_Count</include>
+            </control>
             <include>Global_DialogDiffuser</include>
             <include>Global_Time</include>
             <include>Global_Weather</include>

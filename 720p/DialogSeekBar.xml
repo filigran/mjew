@@ -41,7 +41,49 @@
                 <colordiffuse>white</colordiffuse>
             </control>
             <control type="group">
-                <visible>VideoPlayer.Content(Movies) + Skin.HasSetting(Movies_Show_Seekbar_Cover)</visible>
+                <visible>SubString(Player.FilenameAndPath,://) + !SubString(Player.FilenameAndPath,trailer)</visible>
+                <control type="image">
+                    <description>Wide image</description>
+                    <posx>48</posx>
+                    <posy>-76</posy>
+                    <width>204</width>
+                    <height>115</height>
+                    <texture background="true" diffuse="16x9_diffuse.png">$INFO[VideoPlayer.Cover]</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Wide image gloss</description>
+                    <posx>48</posx>
+                    <posy>-76</posy>
+                    <width>204</width>
+                    <height>115</height>
+                    <texture background="true">mjew/poster_gloss.png</texture>
+                    <colordiffuse>20ffffff</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Wide image reflection</description>
+                    <posx>48</posx>
+                    <posy>39</posy>
+                    <width>204</width>
+                    <height>100</height>
+                    <texture flipy="true" background="true" diffuse="mjew/poster_reflection.png">$INFO[VideoPlayer.Cover]</texture>
+                    <colordiffuse>ffffffff</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Wide image gloss reflection</description>
+                    <posx>48</posx>
+                    <posy>39</posy>
+                    <width>204</width>
+                    <height>80</height>
+                    <texture flipy="true" diffuse="mjew/home_weather_reflection.png" background="true">mjew/poster_gloss.png</texture>
+                    <colordiffuse>20ffffff</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <visible>VideoPlayer.Content(Movies) + Skin.HasSetting(Movies_Show_Seekbar_Cover) + [SubString(Player.FilenameAndPath,trailer) | !SubString(Player.FilenameAndPath,://)]</visible>
                 <control type="image">
                     <description>Poster image for movies</description>
                     <posx>65</posx>
@@ -115,6 +157,21 @@
                 <aligny>center</aligny>
                 <label>$INFO[Player.Time]</label>
                 <animation effect="slide" start="0,0" end="-250,0" time="0" condition="[VideoPlayer.Content(Episodes) + [!Skin.HasSetting(Episodes_Show_Clearart) | IsEmpty(Control.GetLabel(9999))]] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(Movies_Show_Seekbar_Cover)]">conditional</animation>
+                <visible>!Player.Seeking</visible>
+            </control>
+            <control type="label">
+                <description>Elapsed time</description>
+                <posx>290</posx>
+                <posy>17</posy>
+                <width>140</width>
+                <height>20</height>
+                <font>Font_Condensed_18</font>
+                <textcolor>white</textcolor>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$INFO[Player.SeekTime]</label>
+                <animation effect="slide" start="0,0" end="-250,0" time="0" condition="[VideoPlayer.Content(Episodes) + [!Skin.HasSetting(Episodes_Show_Clearart) | IsEmpty(Control.GetLabel(9999))]] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(Movies_Show_Seekbar_Cover)]">conditional</animation>
+                <visible>Player.Seeking</visible>
             </control>
             <control type="progress" id="23">
                 <description>Progressbar</description>
@@ -139,6 +196,17 @@
                 <colordiffuse>ff498999</colordiffuse>
                 <info>Player.Progress</info>
                 <visible>[VideoPlayer.Content(Episodes) + [!Skin.HasSetting(Episodes_Show_Clearart) | IsEmpty(Control.GetLabel(9999))]] | [VideoPlayer.Content(Movies) + !Skin.HasSetting(Movies_Show_Seekbar_Cover)]</visible>
+            </control>
+            <control type="slider" id="401">
+                <description>Seek Slider</description>
+                <posx>365</posx>
+                <posy>20</posy>
+                <width>770</width>
+                <height>12</height>
+                <texturesliderbar>seekslider.png</texturesliderbar>
+                <textureslidernib>osd_slider_nib.png</textureslidernib>
+                <textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
+                <visible>Player.Seeking</visible>
             </control>
             <control type="label">
                 <description>Duration</description>

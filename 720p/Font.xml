@@ -215,7 +215,12 @@
         <font>
             <name>Font_Condensed_Caps_14</name>
             <filename>Condensed_Caps.ttf</filename>
-            <size>18</size>
+            <size>14</size>
+        </font>
+        <font>
+            <name>Font_Condensed_Caps_16</name>
+            <filename>Condensed_Caps.ttf</filename>
+            <size>16</size>
         </font>
         <font>
             <name>Font_Condensed_Caps_18</name>
@@ -236,6 +241,11 @@
             <name>Font_Condensed_Caps_30</name>
             <filename>Condensed_Caps.ttf</filename>
             <size>30</size>
+        </font>
+        <font>
+            <name>Font_Condensed_Caps_50</name>
+            <filename>Condensed_Caps.ttf</filename>
+            <size>50</size>
         </font>
         <font> <!-- Selected control in OSD -->
             <name>Font_Condensed_Bold_18</name>

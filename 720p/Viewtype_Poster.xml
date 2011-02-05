@@ -202,7 +202,7 @@
                     <width>480</width>
                     <height>100</height>
                     <font>Font_Tahoma_20</font>
-                    <align>justify</align>
+                    <align>left</align>
                     <textcolor>white</textcolor>
                     <label fallback="31409">$INFO[ListItem.Plot]</label>
                     <autoscroll time="2000" delay="3000" repeat="5200">[Container.Content(Movies) + Skin.HasSetting(Movies_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
@@ -512,7 +512,7 @@
                     <width>480</width>
                     <height>100</height>
                     <font>Font_Tahoma_20</font>
-                    <align>justify</align>
+                    <align>left</align>
                     <textcolor>white</textcolor>
                     <label fallback="31409">$INFO[ListItem.Plot]</label>
                     <autoscroll time="2000" delay="3000" repeat="5200">[Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Autoscroll_plot)] | [Container.Content(Episodes) + Skin.HasSetting(Episodes_Autoscroll_plot)]</autoscroll>
@@ -730,7 +730,7 @@
                 <width>480</width>
                 <height>100</height>
                 <font>Font_Tahoma_20</font>
-                <align>justify</align>
+                <align>left</align>
                 <textcolor>white</textcolor>
                 <label>$INFO[ListItem.Plot]</label>
                 <pagecontrol>700</pagecontrol>
@@ -772,8 +772,8 @@
                 <posy>680</posy>
                 <width>485</width>
                 <height>35</height>
-                <font>Font_Condensed_Caps_14</font>
-                <textcolor>white</textcolor>
+                <font>Font_Condensed_Caps_18</font>
+                <textcolor>ffdddddd</textcolor>
                 <label>$INFO[ListItem.Duration,, $LOCALIZE[31410]]</label>
                 <visible>Control.HasFocus(520) | Control.HasFocus(521) | Control.HasFocus(700) | Control.HasFocus(701)</visible>
                 <animation effect="fade" start="0" end="100" time="200">Focus</animation>
@@ -819,7 +819,7 @@
                 <width>480</width>
                 <height>100</height>
                 <font>Font_Tahoma_20</font>
-                <align>justify</align>
+                <align>left</align>
                 <textcolor>white</textcolor>
                 <label>$INFO[ListItem.Plot]</label>
                 <pagecontrol>702</pagecontrol>
@@ -833,7 +833,7 @@
                 <width>382</width>
                 <height>78</height>
                 <font>Font_Tahoma_20</font>
-                <align>justify</align>
+                <align>left</align>
                 <textcolor>white</textcolor>
                 <label>$INFO[ListItem.Plot]</label>
                 <pagecontrol>703</pagecontrol>
@@ -888,7 +888,7 @@
                 <posy>680</posy>
                 <width>485</width>
                 <height>35</height>
-                <font>Font_Condensed_Caps_14</font>
+                <font>Font_Condensed_Caps_16</font>
                 <textcolor>white</textcolor>
                 <label>$INFO[ListItem.Duration,, $LOCALIZE[31410]]</label>
                 <visible>Control.HasFocus(520) | Control.HasFocus(521) | Control.HasFocus(700) | Control.HasFocus(701)</visible>
@@ -916,8 +916,8 @@
                 <posy>680</posy>
                 <width>485</width>
                 <height>35</height>
-                <font>Font_Condensed_Caps_14</font>
-                <textcolor>white</textcolor>
+                <font>Font_Condensed_Caps_18</font>
+                <textcolor>ffdddddd</textcolor>
                 <label>$INFO[ListItem.Episode,, $LOCALIZE[20453]]$INFO[ListItem.Property(WatchedEpisodes), (, $LOCALIZE[31332]]$INFO[ListItem.Property(UnWatchedEpisodes),$COMMA , $LOCALIZE[31333])]</label>
                 <animation effect="fade" start="0" end="100" time="200">Focus</animation>
             </control>

@@ -90,7 +90,7 @@
                     <posy>0</posy>
                     <width>807</width>
                     <height>50</height>
-                    <font>Font_Condensed_Bold_Caps_30</font>
+                    <font>Font_Condensed_Caps_30</font>
                     <textcolor>white</textcolor>
                     <info>ListItem.Label</info>
                     <animation effect="slide" start="0,0" end="0,120" time="0" condition="![Container.Content(tvshows) + !StringCompare(Container.FolderPath,videodb://2/2/)] + Container.Content(TVShows) + !Skin.HasSetting(TVShows_Use_Posters)">conditional</animation>
@@ -103,11 +103,11 @@
                     <posy>40</posy>
                     <width>750</width>
                     <height>50</height>
-                    <font>Font_Condensed_Bold_Caps_20</font>
+                    <font>Font_Condensed_Caps_20</font>
                     <textcolor>ffaeaeae</textcolor>
                     <scrollout>false</scrollout>
                     <pauseatend>3000</pauseatend>
-                    <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, | , $LOCALIZE[31410]]$INFO[ListItem.Genre, | ]</label>
+                    <label>$INFO[ListItem.Year]$INFO[ListItem.Duration,   •   , $LOCALIZE[31410]]$INFO[ListItem.Genre,   •   ]</label>
                     <animation effect="slide" start="0,0" end="0,120" time="0" condition="![Container.Content(tvshows) + !StringCompare(Container.FolderPath,videodb://2/2/)] + Container.Content(TVShows) + !Skin.HasSetting(TVShows_Use_Posters)">conditional</animation>
                     <visible>Container.Content(Movies)</visible>
                     <include>VisibleFadeEffect</include>
@@ -118,11 +118,11 @@
                     <posy>40</posy>
                     <width>750</width>
                     <height>50</height>
-                    <font>Font_Condensed_Bold_Caps_20</font>
+                    <font>Font_Condensed_Caps_20</font>
                     <textcolor>ffaeaeae</textcolor>
                     <scrollout>false</scrollout>
                     <pauseatend>3000</pauseatend>
-                    <label>$INFO[ListItem.Premiered]$INFO[ListItem.Duration, | , $LOCALIZE[31410]]$INFO[ListItem.Genre, | ]</label>
+                    <label>$INFO[ListItem.Premiered]$INFO[ListItem.Duration,   •   , $LOCALIZE[31410]]$INFO[ListItem.Genre,   •   ]</label>
                     <animation effect="slide" start="0,0" end="0,120" time="0" condition="![Container.Content(tvshows) + !StringCompare(Container.FolderPath,videodb://2/2/)] + Container.Content(TVShows) + !Skin.HasSetting(TVShows_Use_Posters)">conditional</animation>
                     <visible>[Container.Content(TVShows) + !Skin.HasSetting(TVShows_Use_Posters) + !Control.HasFocus(12) + !Control.HasFocus(16)] | [Container.Content(TVShows) + Skin.HasSetting(TVShows_Use_Posters)] | [Container.Content(TVShows) + !StringCompare(Container.FolderPath,videodb://2/2/)] | Container.Content(Episodes)</visible>
                     <include>VisibleFadeEffect</include>
@@ -147,7 +147,7 @@
                             <posy>0</posy>
                             <width>160</width>
                             <height>30</height>
-                            <font>Font_Normal_Bold_Caps_18</font>
+                            <font>Font_Normal_Caps_18</font>
                             <align>left</align>
                             <aligny>center</aligny>
                             <textcolor>white</textcolor>
@@ -188,7 +188,7 @@
                             <posy>0</posy>
                             <width>160</width>
                             <height>30</height>
-                            <font>Font_Normal_Bold_Caps_18</font>
+                            <font>Font_Normal_Caps_18</font>
                             <align>left</align>
                             <aligny>center</aligny>
                             <textcolor>ff00b8f5</textcolor>
@@ -200,7 +200,7 @@
                             <posy>0</posy>
                             <width>160</width>
                             <height>30</height>
-                            <font>Font_Normal_Bold_Caps_18</font>
+                            <font>Font_Normal_Caps_18</font>
                             <align>left</align>
                             <aligny>center</aligny>
                             <textcolor>white</textcolor>
@@ -458,7 +458,7 @@
                             <posy>0</posy>
                             <width>426</width>
                             <height>240</height>
-                            <font>Font_Normal_Bold_Caps_20</font>
+                            <font>Font_Normal_Caps_20</font>
                             <textcolor>white</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <align>center</align>
@@ -509,7 +509,7 @@
                             <posy>0</posy>
                             <width>426</width>
                             <height>240</height>
-                            <font>Font_Normal_Bold_Caps_20</font>
+                            <font>Font_Normal_Caps_20</font>
                             <textcolor>white</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <align>center</align>
