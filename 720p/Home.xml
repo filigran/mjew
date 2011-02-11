@@ -326,7 +326,7 @@
                         <label>31358</label>
                         <icon>special://skin/media/homeicons/games.png</icon>
                         <thumb fallback="special://skin/media/backgrounds/games.jpg">$INFO[Skin.String(home_custom_back_games_folder)]</thumb>
-                        <onclick>ActivateWindow(10001,plugin://plugin.program.launcher,return)</onclick>
+                        <onclick>ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
                         <visible>!Skin.HasSetting(Home_Hide_Games)</visible>
                     </item>
                     <item id="11">
