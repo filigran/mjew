@@ -72,7 +72,7 @@
                     <font>Font_Condensed_Bold_Caps_30</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                     <visible>IntegerGreaterThan(ListItem.Episode,9) </visible>
                 </control>
                 <control type="label">
@@ -86,7 +86,7 @@
                     <font>Font_Condensed_Bold_Caps_30</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                     <visible>!IntegerGreaterThan(ListItem.Episode,9) </visible>
                 </control>
                 <control type="label">
@@ -99,7 +99,7 @@
                     <font>Font_Condensed_Caps_24</font>
                     <textcolor>white</textcolor>
                     <shadowcolor>black</shadowcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                 </control>
                 <control type="image">
                     <description>Watched overlay</description>
@@ -124,7 +124,7 @@
                     <font>Font_Condensed_Caps_16</font>
                     <textcolor>ffdddddd</textcolor>
                     <shadowcolor>black</shadowcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                 </control>
             </itemlayout>
             <focusedlayout height="231">
@@ -189,7 +189,7 @@
                     <label>$INFO[Listitem.Episode]</label>
                     <font>Font_Condensed_Bold_Caps_30</font>
                     <textcolor>white</textcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                     <visible>IntegerGreaterThan(ListItem.Episode,9) </visible>
@@ -203,7 +203,7 @@
                     <label>$INFO[Listitem.Episode,0]</label>
                     <font>Font_Condensed_Bold_Caps_30</font>
                     <textcolor>white</textcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
                     <animation effect="slide" start="0,20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnPrevious">Focus</animation>
                     <visible>!IntegerGreaterThan(ListItem.Episode,9) </visible>
@@ -217,7 +217,7 @@
                     <label>$INFO[Listitem.Title]</label>
                     <font>Font_Condensed_Caps_30</font>
                     <textcolor>white</textcolor>
-                    <selectedcolor>ff00b8f5</selectedcolor>
+                    <selectedcolor>ff498999</selectedcolor>
                     <pauseatend>2000</pauseatend>
                     <scrollout>false</scrollout>
                     <animation effect="slide" start="0,-20" end="0,0" time="400" reversible="false" tween="back" easing="out" condition="Container.OnNext">Focus</animation>
@@ -391,7 +391,7 @@
                     <posx>0</posx>
                     <posy>210</posy>
                     <width>280</width>
-                    <height>345</height>
+                    <height>320</height>
                     <align>left</align>
                     <info>Container.ShowPlot</info>
                     <font>Font_Tahoma_20</font>
